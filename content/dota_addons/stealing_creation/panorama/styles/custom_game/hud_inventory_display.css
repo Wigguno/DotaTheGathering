@@ -1,0 +1,46 @@
+.ContainerClayDisplay
+{
+	align: left top;
+	height: 53%;
+}
+
+.ContainerClayDisplay2
+{
+	flow-children: down;
+	background-color: #222222bb;
+	vertical-align: bottom;
+}
+
+.ContainerScoreDisplay
+{
+	horizontal-align: center;
+}
+
+.ContainerClayNumDisplay
+{
+	flow-children: right;
+	width: 170px;
+	border-top: 1px solid black;
+	height: 50px;
+}
+
+.ClayTierImage
+{
+	padding: 5px 5px 5px 5px;
+}
+
+.ClayCountDisplay
+{	
+	vertical-align: center;
+	font-size: 40px;
+	color: white;	
+	margin-left: 5px;
+}
+
+.ClayScoreDisplay
+{
+	font-size: 40px;
+	font-weight: bold;
+	color: white;	
+	margin-left: 5px;
+}

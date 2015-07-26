@@ -1,0 +1,8 @@
+take_one
+{
+	material materials/overviews/take_one.vmat
+	pos_x -8192
+	pos_y 5120
+	scale 13.000
+}
+

@@ -1,0 +1,54 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/custom_game/gamesetup_options.css" />
+	</styles> 
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/gamesetup_options.js" />
+	</scripts>
+	
+	<Panel class="ContainerGameSetup" hittest="false">
+		<Panel class="CustomSettingsColumn" hittest="false" >
+			<Panel class="ContainerCustomGameSettingsPanels" hittest="false" >
+
+				<Panel class="ContainerCustomGameSettingsTitle" hittest="false" >
+					<Label class="CustomGameSettingsHeaderTitle" text="Custom Game Settings" hittest="false" />
+				</Panel>
+
+				<Panel class="CustomSettingPanel" hittest="false">
+
+					<Panel class="ContainerCustomGameLengthTitle" hittest="false">
+						<Label class="CustomGameSettingsTitle" id="CustomGameLengthTitle1" hittest="false" text="Game Length" />
+					</Panel>
+
+					<Panel class="CustomGameSettingPanelDivider" hittest="false" />
+					<Panel class="ContainerCustomGameSettingOptions" hittest="false">
+						
+						<RadioButton class="CGSRadio" group="GameLength" id="GameLengthRadio15" text="15 Minutes" onactivate="OnGLRadioButton(15)" />
+						<RadioButton class="CGSRadio" group="GameLength" id="GameLengthRadio20" text="20 Minutes" onactivate="OnGLRadioButton(20)" />
+						<RadioButton class="CGSRadio" group="GameLength" id="GameLengthRadio25" text="25 Minutes" onactivate="OnGLRadioButton(25)" />
+						<RadioButton class="CGSRadio" group="GameLength" id="GameLengthRadio30" text="30 Minutes" onactivate="OnGLRadioButton(30)" />
+
+					</Panel>
+				</Panel>
+				<!--
+				<Panel class="CustomSettingPanel" hittest="false">
+
+					<Panel class="ContainerCustomGameLengthTitle" hittest="false">
+						<Label class="CustomGameSettingsTitle" id="CustomGameLengthTitle1" hittest="false" text="Combat System" />
+					</Panel>
+
+					<Panel class="CustomGameSettingPanelDivider" hittest="false" />
+					<Panel class="ContainerCustomGameSettingOptions" hittest="false">
+
+						<RadioButton class="CGSRadio" group="CombatSystem" id="CombatSystemRadioSimple" 	text="Simple"	onactivate="OnCSRadioButton(1)" />
+						<RadioButton class="CGSRadio" group="CombatSystem" id="CombatSystemRadioTriangle" 	text="Triangle"	onactivate="OnCSRadioButton(2)" />
+
+					</Panel>
+				</Panel>
+				-->
+			</Panel>
+		</Panel>
+	</Panel>
+
+</root>

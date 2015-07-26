@@ -1,0 +1,43 @@
+<root>
+	<script>
+		$.Msg("Compiling Item Textures.");
+	</script>
+
+	<Panel class="ContainerCompileImages" style="opacity:0;" hittest="false">
+		<Image src="file://{images}/items/sword_tier_1.png" hittest="false"/>
+		<Image src="file://{images}/items/sword_tier_2.png" hittest="false"/>
+		<Image src="file://{images}/items/sword_tier_3.png" hittest="false"/>
+		<Image src="file://{images}/items/sword_tier_4.png" hittest="false"/>
+		<Image src="file://{images}/items/sword_tier_5.png" hittest="false"/>
+
+		<Image src="file://{images}/items/bow_tier_1.png" hittest="false"/>
+		<Image src="file://{images}/items/bow_tier_2.png" hittest="false"/>
+		<Image src="file://{images}/items/bow_tier_3.png" hittest="false"/>
+		<Image src="file://{images}/items/bow_tier_4.png" hittest="false"/>
+		<Image src="file://{images}/items/bow_tier_5.png" hittest="false"/>
+
+		<Image src="file://{images}/items/staff_tier_1.png" hittest="false"/>
+		<Image src="file://{images}/items/staff_tier_2.png" hittest="false"/>
+		<Image src="file://{images}/items/staff_tier_3.png" hittest="false"/>
+		<Image src="file://{images}/items/staff_tier_4.png" hittest="false"/>
+		<Image src="file://{images}/items/staff_tier_5.png" hittest="false"/>
+
+		<Image src="file://{images}/items/armour_tier_1.png" hittest="false"/>
+		<Image src="file://{images}/items/armour_tier_2.png" hittest="false"/>
+		<Image src="file://{images}/items/armour_tier_3.png" hittest="false"/>
+		<Image src="file://{images}/items/armour_tier_4.png" hittest="false"/>
+		<Image src="file://{images}/items/armour_tier_5.png" hittest="false"/>
+
+		<Image src="file://{images}/items/hide_tier_1.png" hittest="false"/>
+		<Image src="file://{images}/items/hide_tier_2.png" hittest="false"/>
+		<Image src="file://{images}/items/hide_tier_3.png" hittest="false"/>
+		<Image src="file://{images}/items/hide_tier_4.png" hittest="false"/>
+		<Image src="file://{images}/items/hide_tier_5.png" hittest="false"/>
+
+		<Image src="file://{images}/items/robes_tier_1.png" hittest="false"/>
+		<Image src="file://{images}/items/robes_tier_2.png" hittest="false"/>
+		<Image src="file://{images}/items/robes_tier_3.png" hittest="false"/>
+		<Image src="file://{images}/items/robes_tier_4.png" hittest="false"/>
+		<Image src="file://{images}/items/robes_tier_5.png" hittest="false"/>
+	</Panel>
+</root>

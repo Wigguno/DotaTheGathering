@@ -1,0 +1,36 @@
+.ContainerStealingCreationLoading
+{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    overflow: clip;
+}
+
+#TitlePanel
+{
+	horizontal-align: left;
+	vertical-align: top;
+	margin-top: 150px;
+	margin-left: 100px;
+	flow-children: down;
+}
+
+#AddonTitle
+{
+	margin-top: -15px;
+	vertical-align: center;
+	text-transform: uppercase;
+	font-size: 60px;
+	color: #cccccc;
+	text-shadow: 2px 2px 2px #000000;
+}
+
+#AddonAuthor
+{
+	margin-top: -15px;
+	vertical-align: center;
+	text-transform: uppercase;
+	font-size: 30px;
+	color: #cccccc;
+	text-shadow: 2px 2px 2px #000000;
+}

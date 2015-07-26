@@ -1,0 +1,349 @@
+// Dota Heroes File
+"DOTAAbilities"
+{
+	"Version"		"1"
+
+	"ability_sc_hero_helper"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"		"witch_doctor_maledict"
+
+		"Modifiers"
+		{
+			"modifier_gathering_node_1"
+			{
+				"Passive" 				"0" 
+				"Hidden" 				"0" 
+				"TextureName"			"furion_wrath_of_nature"
+				"ThinkInterval"			"1.0"
+
+				"OnOrder"
+				{
+					"RemoveModifier"
+					{
+						"Target"		"CASTER"
+						"ModifierName"	"modifier_gathering_node_1"
+					}
+					"RunScript"
+					{
+						"ScriptFile"	"gathering.lua"
+						"Function"		"RemoveHighlightNode"
+						"Target"		"CASTER"
+					}
+				}
+
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"gathering.lua"
+						"Function"		"OnGather_1"
+						"Target"		"CASTER"
+					}
+				}
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"gathering.lua"
+						"Function"		"CreateHighlightNode"
+						"Target"		"CASTER"
+					}
+				}
+			}
+
+			"modifier_gathering_node_2"
+			{
+				"Passive" 				"0" 
+				"Hidden" 				"0" 
+				"TextureName"			"furion_wrath_of_nature"
+				"ThinkInterval"			"1.0"
+
+				"OnOrder"
+				{
+					"RemoveModifier"
+					{
+						"Target"		"CASTER"
+						"ModifierName"	"modifier_gathering_node_2"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"	"gathering.lua"
+						"Function"		"RemoveHighlightNode"
+						"Target"		"CASTER"
+					}
+				}
+
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"gathering.lua"
+						"Function"		"OnGather_2"
+						"Target"		"CASTER"
+					}
+				}
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"gathering.lua"
+						"Function"		"CreateHighlightNode"
+						"Target"		"CASTER"
+					}
+				}
+			}
+			
+			"modifier_gathering_node_3"
+			{
+				"Passive" 				"0" 
+				"Hidden" 				"0" 
+				"TextureName"			"furion_wrath_of_nature"
+				"ThinkInterval"			"1.0"
+
+				"OnOrder"
+				{
+					"RemoveModifier"
+					{
+						"Target"		"CASTER"
+						"ModifierName"	"modifier_gathering_node_3"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"	"gathering.lua"
+						"Function"		"RemoveHighlightNode"
+						"Target"		"CASTER"
+					}
+				}
+
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"gathering.lua"
+						"Function"		"OnGather_3"
+						"Target"		"CASTER"
+					}
+				}
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"gathering.lua"
+						"Function"		"CreateHighlightNode"
+						"Target"		"CASTER"
+					}
+				}
+			}
+			
+			"modifier_gathering_node_4"
+			{
+				"Passive" 				"0" 
+				"Hidden" 				"0" 
+				"TextureName"			"furion_wrath_of_nature"
+				"ThinkInterval"			"1.0"
+
+				"OnOrder"
+				{
+					"RemoveModifier"
+					{
+						"Target"		"CASTER"
+						"ModifierName"	"modifier_gathering_node_4"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"	"gathering.lua"
+						"Function"		"RemoveHighlightNode"
+						"Target"		"CASTER"
+					}
+				}
+
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"gathering.lua"
+						"Function"		"OnGather_4"
+						"Target"		"CASTER"
+					}
+				}
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"gathering.lua"
+						"Function"		"CreateHighlightNode"
+						"Target"		"CASTER"
+					}
+				}
+			}
+			
+			"modifier_gathering_node_5"
+			{
+				"Passive" 				"0" 
+				"Hidden" 				"0" 
+				"TextureName"			"furion_wrath_of_nature"
+				"ThinkInterval"			"1.0"
+
+				"OnOrder"
+				{
+					"RemoveModifier"
+					{
+						"Target"		"CASTER"
+						"ModifierName"	"modifier_gathering_node_5"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"	"gathering.lua"
+						"Function"		"RemoveHighlightNode"
+						"Target"		"CASTER"
+					}
+				}
+
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"gathering.lua"
+						"Function"		"OnGather_5"
+						"Target"		"CASTER"
+					}
+				}
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"gathering.lua"
+						"Function"		"CreateHighlightNode"
+						"Target"		"CASTER"
+					}
+				}
+			}
+		}
+	}
+
+	"ability_sc_healthbar_hider"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+		"Modifiers"
+		{
+			"modifier_healthbar_hider"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"States"
+				{
+					"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"	
+				}
+			}
+		}
+	}
+
+	"ability_sc_node_prop"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+		"Modifiers"
+		{
+			"modifier_sc_prop"
+			{
+				"Passive"				"1"
+				"Hidden"				"1"				
+
+				"States"
+				{
+					"MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"	
+				}
+			}
+
+			// TIER TWO - "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_frosty_radiant.vpcf"
+			// TIER THREE - "particles/econ/items/effigies/status_fx_effigies/status_effect_statue_compendium_2014_radiant.vpcf"
+			// TIER FOUR - "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_gold_lvl2.vpcf"
+			// TIER FIVE - "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_jade_stone_dire.vpcf"
+
+			"modifier_node_level_2"
+			{
+				"Passive"	"0"
+				"Hidden"	"1"
+				
+				"StatusEffectName" 		"particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_frosty_radiant.vpcf"
+				"StatusEffectPriority" 	"10"
+			}
+
+			"modifier_node_level_3"
+			{
+				"Passive"	"0"
+				"Hidden"	"1"
+				
+				"StatusEffectName" 		"particles/econ/items/effigies/status_fx_effigies/status_effect_statue_compendium_2014_radiant.vpcf"
+				"StatusEffectPriority" 	"10"
+			}
+
+			"modifier_node_level_4"
+			{
+				"Passive"	"0"
+				"Hidden"	"1"
+				
+				"StatusEffectName" 		"particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_gold_lvl2.vpcf"
+				"StatusEffectPriority" 	"10"
+			}
+
+			"modifier_node_level_5"
+			{
+				"Passive"	"0"
+				"Hidden"	"1"
+				
+				"StatusEffectName" 		"particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_jade_stone_dire.vpcf"
+				"StatusEffectPriority" 	"10"
+			}
+		}
+	}
+
+	"ability_sc_hero_fishing"
+	{
+		"BaseClass" 			"ability_datadriven"
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName" 	"lion_voodoo_fish" 
+	}
+
+	"ability_sc_hero_woodcutting"
+	{
+		"BaseClass" 			"ability_datadriven"
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName" 	"furion_force_of_nature" 
+	}
+
+	"ability_sc_hero_mining"
+	{
+		"BaseClass" 			"ability_datadriven"
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName" 	"tiny_craggy_exterior" 
+	}
+
+	"ability_sc_hero_hunting"
+	{
+		"BaseClass" 			"ability_datadriven"
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName" 	"beastmaster_call_of_the_wild_hawk" 
+	}
+}

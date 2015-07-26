@@ -1,0 +1,64 @@
+"addon"
+{
+	"ResourceTier1"									"Tier 1: Clay"
+	"ResourceTier2"									"Tier 2: Ice"
+	"ResourceTier3"									"Tier 3: Marble"
+	"ResourceTier4"									"Tier 4: Gold"
+	"ResourceTier5"									"Tier 5: Jade"
+
+	"Notify_AbilityMax"								"Ability at max level"
+	"Notify_AbilityNeed0"							"You need 25 clay to level this ability"
+	"Notify_AbilityNeed1"							"You need 30 ice to level this ability"
+	"Notify_AbilityNeed2"							"You need 35 marble to level this ability"
+	"Notify_AbilityNeed3"							"You need 40 gold to level this ability"
+
+	"Notify_WeaponNeed1"							"You need 20 Clay to buy this weapon"
+	"Notify_WeaponNeed2"							"You need 25 Ice to buy this weapon"
+	"Notify_WeaponNeed3"							"You need 30 Marble to buy this weapon"
+	"Notify_WeaponNeed4"							"You need 35 Gold to buy this weapon"
+	"Notify_WeaponNeed5"							"You need 40 Jade to buy this weapon"
+
+	"Notify_ArmourNeed1"							"You need 30 Clay to buy this armour"
+	"Notify_ArmourNeed2"							"You need 35 Ice to buy this armour"
+	"Notify_ArmourNeed3"							"You need 40 Marble to buy this armour"
+	"Notify_ArmourNeed4"							"You need 45 Gold to buy this armour"
+	"Notify_ArmourNeed5"							"You need 50 Jade to buy this armour"
+
+	"CostTier0Ability"								"25 x Clay"
+	"CostTier1Ability"								"30 x Ice"
+	"CostTier2Ability"								"35 x Marble"
+	"CostTier3Ability"								"40 x Gold"
+	"CostTier4Ability"								"Max Level"
+
+	"CostTier1Weapon"								"20 Clay"
+	"CostTier2Weapon"								"25 Ice"
+	"CostTier3Weapon"								"30 Marble"
+	"CostTier4Weapon"								"35 Gold"
+	"CostTier5Weapon"								"40 Jade"
+
+	"CostTier1Armour"								"30 Clay"
+	"CostTier2Armour"								"35 Ice"
+	"CostTier3Armour"								"40 Marble"
+	"CostTier4Armour"								"45 Gold"
+	"CostTier5Armour"								"50 Jade"
+
+	"Gather_FishingLevel1"							"You need Fishing level 1 to gather this resource"
+	"Gather_FishingLevel2"							"You need Fishing level 2 to gather this resource"
+	"Gather_FishingLevel3"							"You need Fishing level 3 to gather this resource"
+	"Gather_FishingLevel4"							"You need Fishing level 4 to gather this resource"
+
+	"Gather_WoodcuttingLevel1"						"You need Woodcutting level 1 to gather this resource"
+	"Gather_WoodcuttingLevel2"						"You need Woodcutting level 2 to gather this resource"
+	"Gather_WoodcuttingLevel3"						"You need Woodcutting level 3 to gather this resource"
+	"Gather_WoodcuttingLevel4"						"You need Woodcutting level 4 to gather this resource"
+
+	"Gather_MiningLevel1"							"You need Mining level 1 to gather this resource"
+	"Gather_MiningLevel2"							"You need Mining level 2 to gather this resource"
+	"Gather_MiningLevel3"							"You need Mining level 3 to gather this resource"
+	"Gather_MiningLevel4"							"You need Mining level 4 to gather this resource"
+
+	"Gather_HuntingLevel1"							"You need Hunting level 1 to gather this resource"
+	"Gather_HuntingLevel2"							"You need Hunting level 2 to gather this resource"
+	"Gather_HuntingLevel3"							"You need Hunting level 3 to gather this resource"
+	"Gather_HuntingLevel4"							"You need Hunting level 4 to gather this resource"
+}

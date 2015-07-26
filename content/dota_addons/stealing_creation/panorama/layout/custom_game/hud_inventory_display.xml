@@ -1,0 +1,76 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/hud_inventory_display.css"/>
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/hud_inventory_display.js" />
+	</scripts>
+	<Panel class="ContainerClayDisplay" hittest="false">		
+		<Panel class="ContainerClayDisplay2" hittest="false">	
+
+			<Panel class="ContainerScoreDisplay" id="ContainerScoreDisplay1" hittest="false">
+				<Label class="ClayScoreDisplay"	id="ClayScoreDisplay1" text="0" hittest="false" />
+			</Panel>		
+			
+			<Panel class="ContainerClayNumDisplay" id="ContainerClayNumDisplay1" hittest="false">
+				<Image 
+					class="ClayTierImage" 
+					src="file://{images}/custom_game/block_clay.png" 
+					scaling="stretch-to-fit-preserve-aspect" 
+					hittest="true" 
+					onmouseover="DOTAShowTextTooltip(#ResourceTier1)" 
+					onmouseout="DOTAHideTextTooltip()"
+				/>
+				<Label class="ClayCountDisplay" id="ClayCountDisplay1" text="0"  hittest="false"/>
+			</Panel>
+			<Panel class="ContainerClayNumDisplay" id="ContainerClayNumDisplay2" hittest="false">
+				<Image 
+					class="ClayTierImage" 
+					src="file://{images}/custom_game/block_ice.png" 
+					scaling="stretch-to-fit-preserve-aspect" 
+					hittest="true" 
+					onmouseover="DOTAShowTextTooltip(#ResourceTier2)" 
+					onmouseout="DOTAHideTextTooltip()"
+				/>
+				<Label class="ClayCountDisplay" id="ClayCountDisplay2" text="0"  hittest="false"/>
+			</Panel>
+
+			<Panel class="ContainerClayNumDisplay" id="ContainerClayNumDisplay3" hittest="false">
+				<Image 
+					class="ClayTierImage" 
+					src="file://{images}/custom_game/block_marble.png" 
+					scaling="stretch-to-fit-preserve-aspect" 
+					hittest="true" 
+					onmouseover="DOTAShowTextTooltip(#ResourceTier3)" 
+					onmouseout="DOTAHideTextTooltip()"
+				/>
+				<Label class="ClayCountDisplay" id="ClayCountDisplay3" text="0"  hittest="false"/>
+			</Panel>
+
+			<Panel class="ContainerClayNumDisplay" id="ContainerClayNumDisplay4" hittest="false">
+				<Image 
+					class="ClayTierImage" 
+					src="file://{images}/custom_game/block_gold.png" 
+					scaling="stretch-to-fit-preserve-aspect"
+					hittest="true" 
+					onmouseover="DOTAShowTextTooltip(#ResourceTier4)" 
+					onmouseout="DOTAHideTextTooltip()"
+				/>
+				<Label class="ClayCountDisplay" id="ClayCountDisplay4" text="0"  hittest="false"/>
+			</Panel>
+
+			<Panel class="ContainerClayNumDisplay" id="ContainerClayNumDisplay5" hittest="false">
+				<Image 
+					class="ClayTierImage" 
+					src="file://{images}/custom_game/block_jade.png" 
+					scaling="stretch-to-fit-preserve-aspect" 
+					hittest="true" 
+					onmouseover="DOTAShowTextTooltip(#ResourceTier5)" 
+					onmouseout="DOTAHideTextTooltip()"
+				/>
+				<Label class="ClayCountDisplay" id="ClayCountDisplay5" text="0"  hittest="false"/>
+			</Panel>
+		</Panel>  
+	</Panel>  
+
+</root>

@@ -1,0 +1,14 @@
+<root>
+  <styles>
+    <include src="file://{resources}/styles/custom_game/hud_right_click_override.css"/>
+  </styles>
+  <scripts>
+    <include src="file://{resources}/scripts/custom_game/Vector.js" />
+    <include src="file://{resources}/scripts/custom_game/stealing_creation_click_modifier.js" />
+  </scripts>
+
+  <Panel class="DemoHud" hittest="false">
+
+  </Panel>  
+
+</root>

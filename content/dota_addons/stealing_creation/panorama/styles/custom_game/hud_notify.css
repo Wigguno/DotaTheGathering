@@ -1,0 +1,25 @@
+.ContainerNotification
+{
+	align: center center;
+	height: 60%;
+
+	transition-property: transform;
+	transition-duration: 0.2s;
+	transform: scaleX(1.2) scaleY(1.2);
+
+	opacity: 0;
+}
+
+.IsVisible
+{
+	transform: scaleX(1) scaleY(1);
+	opacity: 1;
+}
+
+.NotifyLabel
+{
+	align: center bottom;
+	font-size: 36px;
+	color: darkred;
+	font-weight: bold;
+}

@@ -1,0 +1,9 @@
+"AddonInfo"
+{
+	maps			"take_one"
+	"IsPlayable"	"1"
+	"take_one"
+	{
+					"MaxPlayers"                    "10"
+	}
+}

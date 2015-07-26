@@ -1,0 +1,81 @@
+.ContainerConstructInterface
+{
+	align: center center;
+	flow-children: down;
+	
+	transition-property: transform;
+	transition-duration: 0.3s;
+
+	transform: scaleX(0) scaleY(0);
+	opacity: 0;
+}
+
+.ContainerItemSection, .ContainerAbilityUpgrades
+{
+	horizontal-align: center;
+	background-color: #000000aa;
+}
+
+.ContainerItemSection		{	flow-children: down;}
+.ContainerRow				{	flow-children: right;}
+
+.Transform
+{	
+    transform: scaleX(1) scaleY(1);
+}
+
+.IsVisible
+{
+	opacity: 1;
+}
+
+.AbilityUpgradeButton
+{
+	margin: 5px 5px 5px 5px;
+}
+
+#AbilityUpgradeButton2, #AbilityUpgradeButton3, #AbilityUpgradeButton4, #AbilityUpgradeButton5
+{
+	margin-left:	0px;
+}
+
+.AbilityDim
+{
+	width: 100%;
+	height: 100%;
+	background-color: #000000aa;
+}
+
+.AbilityUpgradeLabel
+{
+	align: center center;
+	font-size: 56px;
+	color: white;
+}
+
+.AbilityDescriptionLabel
+{
+	align: center top;
+	margin-top: 3px;
+	font-size: 22px;
+	color: white;
+}
+
+.AbilityCostLabel
+{
+	align: center bottom;
+	margin-top: 3px;
+	font-size: 22px;
+	color: white;
+}
+
+.ItemBuyButton
+{
+	margin-bottom: 5px;
+	margin-left: 5px;
+}
+
+#ItemBuyButtonTier1-6,#ItemBuyButtonTier2-6,#ItemBuyButtonTier3-6,#ItemBuyButtonTier4-6,#ItemBuyButtonTier5-6
+{
+	margin-right: 5px;
+}

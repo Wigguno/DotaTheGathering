@@ -1,0 +1,15 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/custom_game/custom_loading_screen.css" />
+	</styles>
+	<Panel class="ContainerStealingCreationLoading">
+		<Panel id="Background" >
+			<Image src="file://{images}/custom_game/loading2.jpg" />
+		</Panel>
+		<Panel id="TitlePanel">
+			<Label id="AddonTitle" text="#addon_game_name" style="" />
+			<Label id="AddonAuthor" text="#addon_author" style="" />
+		</Panel>
+	</Panel>
+</root>

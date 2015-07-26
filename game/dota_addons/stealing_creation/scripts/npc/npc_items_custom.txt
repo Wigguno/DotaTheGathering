@@ -1,0 +1,2358 @@
+"DOTAAbilities"
+{	
+	"item_sc_sword_tier_1"
+	{
+		"ID"					"3011"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_sword_tier_1"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemWeaponSwitch"
+
+		"precache"
+		{
+			"particle"			"particles/projectile_sword/sword_projectile.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"damage" 			"20"
+			}
+			"02"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"pierce" 			"20"
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnWeaponSwitch"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_sword_tier_1"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_sword_tier_1"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"Orb"
+				{
+					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
+					"Label"					"DOTA_ORB_LABEL_SKADI"  //This does not currently seem to have an effect.  "Label" may not be the right key.
+					"ProjectileName"		"particles/projectile_sword/sword_projectile.vpcf"
+					"CastAttack"			"0"
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 		"%damage"
+				}
+			}
+		}
+	}
+
+	"item_sc_sword_tier_2"
+	{
+		"ID"					"3012"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_sword_tier_2"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemWeaponSwitch"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"damage" 			"40"
+			}
+			"02"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"pierce" 			"40"
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnWeaponSwitch"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_sword_tier_2"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_sword_tier_2"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"Orb"
+				{
+					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
+					"Label"					"DOTA_ORB_LABEL_SKADI"  //This does not currently seem to have an effect.  "Label" may not be the right key.
+					"ProjectileName"		"particles/projectile_sword/sword_projectile.vpcf"
+					"CastAttack"			"0"
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 		"%damage"
+				}
+			}
+		}
+	}
+
+	"item_sc_sword_tier_3"
+	{
+		"ID"					"3013"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_sword_tier_3"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemWeaponSwitch"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"damage" 			"60"
+			}
+			"02"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"pierce" 			"60"
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnWeaponSwitch"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_sword_tier_3"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_sword_tier_3"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"Orb"
+				{
+					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
+					"Label"					"DOTA_ORB_LABEL_SKADI"  //This does not currently seem to have an effect.  "Label" may not be the right key.
+					"ProjectileName"		"particles/projectile_sword/sword_projectile.vpcf"
+					"CastAttack"			"0"
+				}
+				
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 		"%damage"
+				}
+			}
+		}
+	}
+	
+	"item_sc_sword_tier_4"
+	{
+		"ID"					"3014"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_sword_tier_4"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemWeaponSwitch"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"damage" 			"80"
+			}
+			"02"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"pierce" 			"80"
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnWeaponSwitch"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_sword_tier_4"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_sword_tier_4"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"Orb"
+				{
+					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
+					"Label"					"DOTA_ORB_LABEL_SKADI"  //This does not currently seem to have an effect.  "Label" may not be the right key.
+					"ProjectileName"		"particles/projectile_sword/sword_projectile.vpcf"
+					"CastAttack"			"0"
+				}
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 		"%damage"
+				}
+			}
+		}
+	}
+	
+	"item_sc_sword_tier_5"
+	{
+		"ID"					"3015"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_sword_tier_5"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemWeaponSwitch"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"damage" 			"100"
+			}
+			"02"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"pierce" 			"100"
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnWeaponSwitch"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_sword_tier_5"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_sword_tier_5"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"Orb"
+				{
+					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
+					"Label"					"DOTA_ORB_LABEL_SKADI"  //This does not currently seem to have an effect.  "Label" may not be the right key.
+					"ProjectileName"		"particles/projectile_sword/sword_projectile.vpcf"
+					"CastAttack"			"0"
+				}
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 		"%damage"
+				}
+			}
+		}
+	}
+	
+	"item_sc_bow_tier_1"
+	{
+		"ID"					"3011"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_bow_tier_1"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemWeaponSwitch"
+
+		"precache"
+		{
+			"particle"			"particles/projectile_bow/bow_projectile.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"damage" 			"20"
+			}
+			"02"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"pierce" 			"20"
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnWeaponSwitch"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_bow_tier_1"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_bow_tier_1"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"Orb"
+				{
+					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
+					"Label"					"DOTA_ORB_LABEL_SKADI"  //This does not currently seem to have an effect.  "Label" may not be the right key.
+					"ProjectileName"		"particles/projectile_bow/bow_projectile.vpcf"
+					"CastAttack"			"0"
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 		"%damage"
+				}
+			}
+		}
+	}
+
+	"item_sc_bow_tier_2"
+	{
+		"ID"					"3012"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_bow_tier_2"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemWeaponSwitch"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"damage" 			"40"
+			}
+			"02"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"pierce" 			"40"
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnWeaponSwitch"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_bow_tier_2"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_bow_tier_2"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"Orb"
+				{
+					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
+					"Label"					"DOTA_ORB_LABEL_SKADI"  //This does not currently seem to have an effect.  "Label" may not be the right key.
+					"ProjectileName"		"particles/projectile_bow/bow_projectile.vpcf"
+					"CastAttack"			"0"
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 		"%damage"
+				}
+			}
+		}
+	}
+
+	"item_sc_bow_tier_3"
+	{
+		"ID"					"3013"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_bow_tier_3"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemWeaponSwitch"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"damage" 			"60"
+			}
+			"02"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"pierce" 			"60"
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnWeaponSwitch"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_bow_tier_3"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_bow_tier_3"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"Orb"
+				{
+					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
+					"Label"					"DOTA_ORB_LABEL_SKADI"  //This does not currently seem to have an effect.  "Label" may not be the right key.
+					"ProjectileName"		"particles/projectile_bow/bow_projectile.vpcf"
+					"CastAttack"			"0"
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 		"%damage"
+				}
+			}
+		}
+	}
+	
+	"item_sc_bow_tier_4"
+	{
+		"ID"					"3014"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_bow_tier_4"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemWeaponSwitch"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"damage" 			"80"
+			}
+			"02"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"pierce" 			"80"
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnWeaponSwitch"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_bow_tier_4"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_bow_tier_4"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"Orb"
+				{
+					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
+					"Label"					"DOTA_ORB_LABEL_SKADI"  //This does not currently seem to have an effect.  "Label" may not be the right key.
+					"ProjectileName"		"particles/projectile_bow/bow_projectile.vpcf"
+					"CastAttack"			"0"
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 		"%damage"
+				}
+			}
+		}
+	}
+	
+	"item_sc_bow_tier_5"
+	{
+		"ID"					"3015"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_bow_tier_5"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemWeaponSwitch"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"damage" 			"100"
+			}
+			"02"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"pierce" 			"100"
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnWeaponSwitch"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_bow_tier_5"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_bow_tier_5"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"Orb"
+				{
+					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
+					"Label"					"DOTA_ORB_LABEL_SKADI"  //This does not currently seem to have an effect.  "Label" may not be the right key.
+					"ProjectileName"		"particles/projectile_bow/bow_projectile.vpcf"
+					"CastAttack"			"0"
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 		"%damage"
+				}
+			}
+		}
+	}
+	
+	"item_sc_staff_tier_1"
+	{
+		"ID"					"3011"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_staff_tier_1"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemWeaponSwitch"
+
+		"precache"
+		{
+			"particle"			"particles/projectile_staff/staff_projectile.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"damage" 			"20"
+			}
+			"02"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"pierce" 			"20"
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnWeaponSwitch"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_staff_tier_1"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_staff_tier_1"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"Orb"
+				{
+					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
+					"Label"					"DOTA_ORB_LABEL_SKADI"  //This does not currently seem to have an effect.  "Label" may not be the right key.
+					"ProjectileName"		"particles/projectile_staff/staff_projectile.vpcf"
+					"CastAttack"			"0"
+				}
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 		"%damage"
+				}
+			}
+		}
+	}
+
+	"item_sc_staff_tier_2"
+	{
+		"ID"					"3012"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_staff_tier_2"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemWeaponSwitch"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"damage" 			"40"
+			}
+			"02"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"pierce" 			"40"
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnWeaponSwitch"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_staff_tier_2"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_staff_tier_2"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"Orb"
+				{
+					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
+					"Label"					"DOTA_ORB_LABEL_SKADI"  //This does not currently seem to have an effect.  "Label" may not be the right key.
+					"ProjectileName"		"particles/projectile_staff/staff_projectile.vpcf"
+					"CastAttack"			"0"
+				}
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 		"%damage"
+				}
+			}
+		}
+	}
+
+	"item_sc_staff_tier_3"
+	{
+		"ID"					"3013"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_staff_tier_3"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemWeaponSwitch"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"damage" 			"60"
+			}
+			"02"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"pierce" 			"60"
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnWeaponSwitch"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_staff_tier_3"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_staff_tier_3"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"Orb"
+				{
+					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
+					"Label"					"DOTA_ORB_LABEL_SKADI"  //This does not currently seem to have an effect.  "Label" may not be the right key.
+					"ProjectileName"		"particles/projectile_staff/staff_projectile.vpcf"
+					"CastAttack"			"0"
+				}
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 		"%damage"
+				}
+			}
+		}
+	}
+	
+	"item_sc_staff_tier_4"
+	{
+		"ID"					"3014"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_staff_tier_4"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemWeaponSwitch"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"damage" 			"80"
+			}
+			"02"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"pierce" 			"80"
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnWeaponSwitch"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_staff_tier_4"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_staff_tier_4"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"Orb"
+				{
+					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
+					"Label"					"DOTA_ORB_LABEL_SKADI"  //This does not currently seem to have an effect.  "Label" may not be the right key.
+					"ProjectileName"		"particles/projectile_staff/staff_projectile.vpcf"
+					"CastAttack"			"0"
+				}
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 		"%damage"
+				}
+			}
+		}
+	}
+	
+	"item_sc_staff_tier_5"
+	{
+		"ID"					"3015"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_staff_tier_5"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemWeaponSwitch"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"damage" 			"100"
+			}
+			"02"
+			{ 
+				"var_type"  		"FIELD_INTEGER"
+				"pierce" 			"100"
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnWeaponSwitch"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_staff_tier_5"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_staff_tier_5"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"Orb"
+				{
+					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
+					"Label"					"DOTA_ORB_LABEL_SKADI"  //This does not currently seem to have an effect.  "Label" may not be the right key.
+					"ProjectileName"		"particles/projectile_staff/staff_projectile.vpcf"
+					"CastAttack"			"0"
+				}
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 		"%damage"
+				}
+			}
+		}
+	}
+	
+	"item_sc_armour_tier_1"
+	{
+		"ID"					"3015"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_armour_tier_1"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemArmourSwitch"
+
+		"precache"
+		{
+			"particle" 			"particles/shield_armour/shield_armour.vpcf"
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnArmourSwitch"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"bonus_health" 		"40"
+			}
+			"02"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"damage_block" 		"10"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_armour_tier_1"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_armour_tier_1"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"EffectName" 		"particles/shield_armour/shield_armour.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}
+
+			"modifier_sc_armour_tier_1_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"%bonus_health"
+				}
+			}
+		}
+	}
+	
+	"item_sc_armour_tier_2"
+	{
+		"ID"					"3015"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_armour_tier_2"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemArmourSwitch"
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnArmourSwitch"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"bonus_health" 		"80"
+			}
+			"02"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"damage_block" 		"20"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_armour_tier_2"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_armour_tier_2"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"EffectName" 		"particles/shield_armour/shield_armour.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}
+
+			"modifier_sc_armour_tier_2_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"%bonus_health"
+				}
+			}
+		}
+	}
+	
+	"item_sc_armour_tier_3"
+	{
+		"ID"					"3015"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_armour_tier_3"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemArmourSwitch"
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnArmourSwitch"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"bonus_health" 		"120"
+			}
+			"02"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"damage_block" 		"30"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_armour_tier_3"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_armour_tier_3"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"EffectName" 		"particles/shield_armour/shield_armour.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}
+
+			"modifier_sc_armour_tier_3_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"%bonus_health"
+				}
+			}
+		}
+	}
+	
+	"item_sc_armour_tier_4"
+	{
+		"ID"					"3015"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_armour_tier_4"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemArmourSwitch"
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnArmourSwitch"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"bonus_health" 		"160"
+			}
+			"02"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"damage_block" 		"40"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_armour_tier_4"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_armour_tier_4"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"EffectName" 		"particles/shield_armour/shield_armour.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}
+
+			"modifier_sc_armour_tier_4_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"%bonus_health"
+				}
+			}
+		}
+	}
+	
+	"item_sc_armour_tier_5"
+	{
+		"ID"					"3015"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_armour_tier_5"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemArmourSwitch"
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnArmourSwitch"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"bonus_health" 		"200"
+			}
+			"02"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"damage_block" 		"50"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_armour_tier_5"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_armour_tier_5"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"EffectName" 		"particles/shield_armour/shield_armour.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}
+
+			"modifier_sc_armour_tier_5_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"%bonus_health"
+				}
+			}
+		}
+	}
+	
+	"item_sc_hide_tier_1"
+	{
+		"ID"					"3015"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_hide_tier_1"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemArmourSwitch"
+
+		"precache"
+		{
+			"particle" 			"particles/shield_hide/shield_hide.vpcf"
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnArmourSwitch"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"bonus_health" 		"40"
+			}
+			"02"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"damage_block" 		"10"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_hide_tier_1"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_hide_tier_1"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"EffectName" 		"particles/shield_hide/shield_hide.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}
+
+			"modifier_sc_hide_tier_1_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"%bonus_health"
+				}
+			}
+		}
+	}	
+	
+	"item_sc_hide_tier_2"
+	{
+		"ID"					"3015"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_hide_tier_2"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemArmourSwitch"
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnArmourSwitch"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"bonus_health" 		"80"
+			}
+			"02"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"damage_block" 		"20"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_hide_tier_2"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_hide_tier_2"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"EffectName" 		"particles/shield_hide/shield_hide.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}
+
+			"modifier_sc_hide_tier_2_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"%bonus_health"
+				}
+			}
+		}
+	}
+	
+	"item_sc_hide_tier_3"
+	{
+		"ID"					"3015"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_hide_tier_3"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemArmourSwitch"
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnArmourSwitch"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"bonus_health" 		"120"
+			}
+			"02"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"damage_block" 		"30"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_hide_tier_3"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_hide_tier_3"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"EffectName" 		"particles/shield_hide/shield_hide.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}
+
+			"modifier_sc_hide_tier_3_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"%bonus_health"
+				}
+			}
+		}
+	}
+	
+	"item_sc_hide_tier_4"
+	{
+		"ID"					"3015"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_hide_tier_4"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemArmourSwitch"
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnArmourSwitch"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"bonus_health" 		"160"
+			}
+			"02"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"damage_block" 		"40"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_hide_tier_4"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_hide_tier_4"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"EffectName" 		"particles/shield_hide/shield_hide.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}
+
+			"modifier_sc_hide_tier_4_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"%bonus_health"
+				}
+			}
+		}
+	}
+	
+	"item_sc_hide_tier_5"
+	{
+		"ID"					"3015"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_hide_tier_5"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemArmourSwitch"
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnArmourSwitch"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"bonus_health" 		"200"
+			}
+			"02"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"damage_block" 		"50"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_hide_tier_5"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_hide_tier_5"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"EffectName" 		"particles/shield_hide/shield_hide.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}
+
+			"modifier_sc_hide_tier_5_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"%bonus_health"
+				}
+			}
+		}
+	}
+	
+	"item_sc_robes_tier_1"
+	{
+		"ID"					"3015"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_robes_tier_1"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemArmourSwitch"
+
+		"precache"
+		{
+			"particle" 			"particles/shield_robes/shield_robes.vpcf"
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnArmourSwitch"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"bonus_health" 		"40"
+			}
+			"02"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"damage_block" 		"10"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_robes_tier_1"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_robes_tier_1"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"EffectName" 		"particles/shield_robes/shield_robes.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}
+
+			"modifier_sc_robes_tier_1_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"%bonus_health"
+				}
+			}
+		}
+	}
+	
+	"item_sc_robes_tier_2"
+	{
+		"ID"					"3015"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_robes_tier_2"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemArmourSwitch"
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnArmourSwitch"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"bonus_health" 		"80"
+			}
+			"02"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"damage_block" 		"20"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_robes_tier_2"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_robes_tier_2"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"EffectName" 		"particles/shield_robes/shield_robes.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}
+
+			"modifier_sc_robes_tier_2_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"%bonus_health"
+				}
+			}
+		}
+	}
+	
+	"item_sc_robes_tier_3"
+	{
+		"ID"					"3015"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_robes_tier_3"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemArmourSwitch"
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnArmourSwitch"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"bonus_health" 		"120"
+			}
+			"02"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"damage_block" 		"30"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_robes_tier_3"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_robes_tier_3"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"EffectName" 		"particles/shield_robes/shield_robes.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}
+
+			"modifier_sc_robes_tier_3_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"%bonus_health"
+				}
+			}
+		}
+	}
+	
+	"item_sc_robes_tier_4"
+	{
+		"ID"					"3015"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_robes_tier_4"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemArmourSwitch"
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnArmourSwitch"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"bonus_health" 		"160"
+			}
+			"02"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"damage_block" 		"40"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_robes_tier_4"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_robes_tier_4"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"EffectName" 		"particles/shield_robes/shield_robes.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}
+
+			"modifier_sc_robes_tier_4_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"%bonus_health"
+				}
+			}
+		}
+	}
+	
+	"item_sc_robes_tier_5"
+	{
+		"ID"					"3015"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_robes_tier_5"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemDisplayCharges" 	"0"
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1.2"
+		"AbilityCooldown"		"2.8"
+		"AbilitySharedCooldown" "itemArmourSwitch"
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnArmourSwitch"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"bonus_health" 		"200"
+			}
+			"02"
+			{
+				"var_type" 			"FIELD_INTEGER"
+				"damage_block" 		"50"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_sc_robes_tier_5"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sc_robes_tier_5"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"EffectName" 		"particles/shield_robes/shield_robes.vpcf"
+				"EffectAttachType" 	"follow_origin"
+			}
+
+			"modifier_sc_robes_tier_5_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS"	"%bonus_health"
+				}
+			}
+		}
+	}	
+}

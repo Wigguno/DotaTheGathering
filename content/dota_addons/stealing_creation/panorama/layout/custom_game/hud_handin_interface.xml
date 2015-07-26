@@ -1,0 +1,93 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/hud_handin_interface.css"/>
+	</styles>
+
+	<scripts>
+    <include src="file://{resources}/scripts/custom_game/Vector.js" />
+		<include src="file://{resources}/scripts/custom_game/hud_handin_interface.js" />
+	</scripts>
+
+	<Panel class="ContainerHandinInterface" hittest="false">
+		<Panel class="ContainerUI" hittest="false">
+			<Panel class="ContainerInventory" hittest="false">
+				<Label class="ContainerInventoryTitle" text="Inventory" hittest="false" />
+				<Panel class="ContainerItemHandins ContainerRow" hittest="false">
+
+					<Button class="ItemHandinButton" id="ItemHandinButton0" onactivate="OnInventoryButtonPressed(0)">
+						<DOTAItemImage class="ItemImage" itemname="" id="InventoryContents0" hittest="false" />
+					</Button>
+
+					<Button class="ItemHandinButton" id="ItemHandinButton1" onactivate="OnInventoryButtonPressed(1)">
+						<DOTAItemImage class="ItemImage" itemname="" id="InventoryContents1" hittest="false" />
+					</Button>
+
+					<Button class="ItemHandinButton" id="ItemHandinButton2" onactivate="OnInventoryButtonPressed(2)">
+						<DOTAItemImage class="ItemImage" itemname="" id="InventoryContents2" hittest="false" />
+					</Button>
+
+				</Panel>
+				<Panel class="ContainerItemHandins ContainerRow" hittest="false">
+
+					<Button class="ItemHandinButton" id="ItemHandinButton3" onactivate="OnInventoryButtonPressed(3)">
+						<DOTAItemImage class="ItemImage" itemname="" id="InventoryContents3" hittest="false" />
+					</Button>
+
+					<Button class="ItemHandinButton" id="ItemHandinButton4" onactivate="OnInventoryButtonPressed(4)">
+						<DOTAItemImage class="ItemImage" itemname="" id="InventoryContents4" hittest="false" />
+					</Button>
+
+					<Button class="ItemHandinButton" id="ItemHandinButton5" onactivate="OnInventoryButtonPressed(5)">
+						<DOTAItemImage class="ItemImage" itemname="" id="InventoryContents5" hittest="false" />
+					</Button>
+
+				</Panel>
+			</Panel>
+
+			<Panel class="ContainerSeperator" hittest="false" />
+
+			<Panel class="ContainerChest" hittest="false">
+				<Label class="ContainerChestTitle" text="Chest" hittest="false" />
+				<Panel class="ContainerItemHandins ContainerRow" hittest="false">
+
+					<Button class="ItemHandinButton" id="ItemReturnButton0" onactivate="OnChestButtonPressed(0)">
+						<DOTAItemImage class="ItemImage" itemname="" id="ChestContents0" hittest="false" />
+					</Button>
+
+					<Button class="ItemHandinButton" id="ItemReturnButton1" onactivate="OnChestButtonPressed(1)">
+						<DOTAItemImage class="ItemImage" itemname="" id="ChestContents1" hittest="false" />
+					</Button>
+
+					<Button class="ItemHandinButton" id="ItemReturnButton2" onactivate="OnChestButtonPressed(2)">
+						<DOTAItemImage class="ItemImage" itemname="" id="ChestContents2" hittest="false" />
+					</Button>
+
+				</Panel>
+				<Panel class="ContainerItemHandins ContainerRow" hittest="false">
+
+					<Button class="ItemHandinButton" id="ItemReturnButton3" onactivate="OnChestButtonPressed(3)">
+						<DOTAItemImage class="ItemImage" itemname="" id="ChestContents3" hittest="false" />
+					</Button>
+
+					<Button class="ItemHandinButton" id="ItemReturnButton4" onactivate="OnChestButtonPressed(4)">
+						<DOTAItemImage class="ItemImage" itemname="" id="ChestContents4" hittest="false" />
+					</Button>
+
+					<Button class="ItemHandinButton" id="ItemReturnButton5" onactivate="OnChestButtonPressed(5)">
+						<DOTAItemImage class="ItemImage" itemname="" id="ChestContents5" hittest="false" />
+					</Button>
+
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel class="ContainerFinish" hittest="false">
+			<Button class="FinishButton" onactivate="OnFinishButton()" >
+				<Label class="FinishText" id="DepositButtonLabel1" text="Deposit" /> 
+			</Button>
+			<Button class="FinishButton" onactivate="OnHideHandinHUD()" >
+				<Label class="FinishText" id="DepositButtonLabel2" text="Cancel" /> 
+			</Button>
+		</Panel>
+	</Panel>  
+
+</root>

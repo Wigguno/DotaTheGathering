@@ -1,0 +1,80 @@
+.ContainerHandinInterface
+{
+	align: center center;
+	flow-children: down;
+	background-color: #000000bb;
+	padding: 5px;
+	
+	transition-property: transform;
+	transition-duration: 0.3s;
+
+	transform: scaleX(0) scaleY(0);
+	opacity: 0;
+}
+
+.Transform
+{	
+    transform: scaleX(1) scaleY(1);
+}
+
+.IsVisible
+{
+	opacity: 1;
+}
+
+.ContainerUI
+{
+	flow-children: right;
+}
+
+.ContainerInventoryTitle, .ContainerChestTitle
+{
+	horizontal-align: center;
+	color: white;
+	font-size: 16px;
+}
+
+.ContainerInventory, .ContainerChest
+{
+	flow-children: down;
+}
+
+.ContainerSeperator{width: 20px;}
+
+.ContainerRow
+{
+	flow-children: right;
+}
+
+.ItemImage
+{
+	width:86px;
+	height:64px;
+}
+
+.ItemHandinButton
+{
+	margin: 2px;
+}
+
+.ContainerFinish
+{
+	flow-children: right;
+	horizontal-align: center;
+}
+
+.FinishButton
+{
+	background-color: #FFFFFF22;
+	border: 1px solid black;
+
+	margin-top: 10px;
+	padding: 2px;
+	margin-right: 10px;
+}
+
+.FinishText
+{
+	color: white;
+	font-size: 24px;
+}
