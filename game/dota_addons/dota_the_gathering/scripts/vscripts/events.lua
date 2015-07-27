@@ -2,7 +2,6 @@
 -- By wigguno
 -- http://steamcommunity.com/id/wigguno/
 
-
 -- Lua Events
 
 function CStealingCreationGameMode:AddAllMats(keys)
