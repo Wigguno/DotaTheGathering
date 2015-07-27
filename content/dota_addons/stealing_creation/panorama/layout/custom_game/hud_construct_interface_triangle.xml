@@ -1,0 +1,154 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/hud_construct_interface.css"/>
+	</styles>
+	<scripts>
+    <include src="file://{resources}/scripts/custom_game/Vector.js" />
+		<include src="file://{resources}/scripts/custom_game/hud_construct_interface.js" />
+	</scripts>
+	<Panel class="ContainerConstructInterface" hittest="false">
+		<Panel class="ContainerAbilityUpgrades ContainerRow" hittest="false">
+			<Button class="AbilityUpgradeButton" id="AbilityUpgradeButton1" onactivate="OnUpgradeAbility(0)" >
+				<DOTAAbilityImage abilityname="ability_sc_hero_fishing" hittest="false"/>
+				<Panel class="AbilityDim" hittest="false" />
+				<Label class="AbilityUpgradeLabel"		id="AbilityUpgradeLabel1" 		text="+" hittest="false" />
+				<Label class="AbilityDescriptionLabel"	id="AbilityDescriptionLabel1" 	text="Fishing" hittest="false" />
+				<Label class="AbilityCostLabel"			id="AbilityCostLabel1"			text="25x Lvl1" hittest="false" />
+			</Button>
+
+			<Button class="AbilityUpgradeButton" id="AbilityUpgradeButton2" onactivate="OnUpgradeAbility(1)" >
+				<DOTAAbilityImage abilityname="ability_sc_hero_woodcutting" hittest="false"/>
+				<Panel class="AbilityDim" hittest="false" />
+				<Label class="AbilityUpgradeLabel"		id="AbilityUpgradeLabel2" 		text="+" hittest="false" />
+				<Label class="AbilityDescriptionLabel"	id="AbilityDescriptionLabel2" 	text="Woodcutting" hittest="false" />
+				<Label class="AbilityCostLabel"			id="AbilityCostLabel2"			text="25x Lvl1" hittest="false" />
+			</Button>
+
+			<Button class="AbilityUpgradeButton" id="AbilityUpgradeButton3" onactivate="OnUpgradeAbility(2)" >
+				<DOTAAbilityImage abilityname="ability_sc_hero_mining" hittest="false"/>
+				<Panel class="AbilityDim" hittest="false" />
+				<Label class="AbilityUpgradeLabel"		id="AbilityUpgradeLabel3" 		text="+" hittest="false" />
+				<Label class="AbilityDescriptionLabel"	id="AbilityDescriptionLabel3" 	text="Mining" hittest="false" />
+				<Label class="AbilityCostLabel"			id="AbilityCostLabel3"			text="25x Lvl1" hittest="false" />
+			</Button>
+
+			<Button class="AbilityUpgradeButton" id="AbilityUpgradeButton4" onactivate="OnUpgradeAbility(3)" >
+				<Image src="file://{images}/custom_game/beastmaster_call_of_the_wild_hawk.png" scaling="stretch-to-fit-preserve-aspect" hittest="false" />
+				<Panel class="AbilityDim" hittest="false" />
+				<Label class="AbilityUpgradeLabel"		id="AbilityUpgradeLabel4" 		text="+" hittest="false" />
+				<Label class="AbilityDescriptionLabel"	id="AbilityDescriptionLabel4" 	text="Hunting" hittest="false" />
+				<Label class="AbilityCostLabel"			id="AbilityCostLabel4"			text="25x Lvl1" hittest="false" />
+			</Button>
+
+			<Button class="AbilityUpgradeButton" id="AbilityUpgradeButton5" onactivate="OnHideConstructHUD()" >
+				<DOTAAbilityImage hittest="false"/>
+				<Panel class="AbilityDim" hittest="false" />
+				<Label class="AbilityUpgradeLabel"		id="AbilityUpgradeLabel5" text="x" hittest="false" />
+				<Label class="AbilityDescriptionLabel"	id="AbilityDescriptionLabel5" text="Close" hittest="false" />
+			</Button>
+		</Panel>
+		<Panel class="ContainerItemSection" hittest="false">
+			<Panel class="ContainerItemUpgrades ContainerRow" hittest="false">
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier1-1" onactivate="OnBuyButtonPressed(1, 1)" onmouseover="DOTAShowTextTooltip(#CostTier1Weapon)" onmouseout="DOTAHideTextTooltip()">
+					<DOTAItemImage itemname="item_sc_sword_tier_1" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier1-2" onactivate="OnBuyButtonPressed(2, 1)" onmouseover="DOTAShowTextTooltip(#CostTier1Weapon)" onmouseout="DOTAHideTextTooltip()">
+					<DOTAItemImage itemname="item_sc_bow_tier_1" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier1-3" onactivate="OnBuyButtonPressed(3, 1)" onmouseover="DOTAShowTextTooltip(#CostTier1Weapon)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_staff_tier_1" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier1-4" onactivate="OnBuyButtonPressed(4, 1)" onmouseover="DOTAShowTextTooltip(#CostTier1Armour)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_armour_tier_1" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier1-5" onactivate="OnBuyButtonPressed(5, 1)" onmouseover="DOTAShowTextTooltip(#CostTier1Armour)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_hide_tier_1" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier1-6" onactivate="OnBuyButtonPressed(6, 1)" onmouseover="DOTAShowTextTooltip(#CostTier1Armour)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_robes_tier_1" hittest="false" />
+				</Button>
+			</Panel>
+			<Panel class="ContainerItemUpgrades ContainerRow" hittest="false">
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier2-1" onactivate="OnBuyButtonPressed(1, 2)" onmouseover="DOTAShowTextTooltip(#CostTier2Weapon)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_sword_tier_2" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier2-2" onactivate="OnBuyButtonPressed(2, 2)" onmouseover="DOTAShowTextTooltip(#CostTier2Weapon)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_bow_tier_2" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier2-3" onactivate="OnBuyButtonPressed(3, 2)" onmouseover="DOTAShowTextTooltip(#CostTier2Weapon)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_staff_tier_3" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier2-4" onactivate="OnBuyButtonPressed(4, 2)" onmouseover="DOTAShowTextTooltip(#CostTier2Armour)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_armour_tier_2" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier2-5" onactivate="OnBuyButtonPressed(5, 2)" onmouseover="DOTAShowTextTooltip(#CostTier2Armour)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_hide_tier_2" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier2-6" onactivate="OnBuyButtonPressed(6, 2)" onmouseover="DOTAShowTextTooltip(#CostTier2Armour)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_robes_tier_2" hittest="false" />
+				</Button>
+			</Panel>
+			<Panel class="ContainerItemUpgrades ContainerRow" hittest="false">
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier3-1" onactivate="OnBuyButtonPressed(1, 3)" onmouseover="DOTAShowTextTooltip(#CostTier3Weapon)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_sword_tier_3" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier3-2" onactivate="OnBuyButtonPressed(2, 3)" onmouseover="DOTAShowTextTooltip(#CostTier3Weapon)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_bow_tier_3" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier3-3" onactivate="OnBuyButtonPressed(3, 3)" onmouseover="DOTAShowTextTooltip(#CostTier3Weapon)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_staff_tier_3" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier3-4" onactivate="OnBuyButtonPressed(4, 3)" onmouseover="DOTAShowTextTooltip(#CostTier3Armour)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_armour_tier_3" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier3-5" onactivate="OnBuyButtonPressed(5, 3)" onmouseover="DOTAShowTextTooltip(#CostTier3Armour)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_hide_tier_3" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier3-6" onactivate="OnBuyButtonPressed(6, 3)" onmouseover="DOTAShowTextTooltip(#CostTier3Armour)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_robes_tier_3" hittest="false" />
+				</Button>
+			</Panel>
+			<Panel class="ContainerItemUpgrades ContainerRow" hittest="false">
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier4-1" onactivate="OnBuyButtonPressed(1, 4)" onmouseover="DOTAShowTextTooltip(#CostTier4Weapon)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_sword_tier_4" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier4-2" onactivate="OnBuyButtonPressed(2, 4)" onmouseover="DOTAShowTextTooltip(#CostTier4Weapon)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_bow_tier_4" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier4-3" onactivate="OnBuyButtonPressed(3, 4)" onmouseover="DOTAShowTextTooltip(#CostTier4Weapon)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_staff_tier_4" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier4-4" onactivate="OnBuyButtonPressed(4, 4)" onmouseover="DOTAShowTextTooltip(#CostTier4Armour)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_armour_tier_4" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier4-5" onactivate="OnBuyButtonPressed(5, 4)" onmouseover="DOTAShowTextTooltip(#CostTier4Armour)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_hide_tier_4" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier4-6" onactivate="OnBuyButtonPressed(6, 4)" onmouseover="DOTAShowTextTooltip(#CostTier4Armour)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_robes_tier_4" hittest="false" />
+				</Button>
+			</Panel>
+			<Panel class="ContainerItemUpgrades ContainerRow" hittest="false">
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier5-1" onactivate="OnBuyButtonPressed(1, 5)" onmouseover="DOTAShowTextTooltip(#CostTier5Weapon)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_sword_tier_5" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier5-2" onactivate="OnBuyButtonPressed(2, 5)" onmouseover="DOTAShowTextTooltip(#CostTier5Weapon)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_bow_tier_5" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier5-3" onactivate="OnBuyButtonPressed(3, 5)" onmouseover="DOTAShowTextTooltip(#CostTier5Weapon)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_staff_tier_5" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier5-4" onactivate="OnBuyButtonPressed(4, 5)" onmouseover="DOTAShowTextTooltip(#CostTier5Armour)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_armour_tier_5" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier5-5" onactivate="OnBuyButtonPressed(5, 5)" onmouseover="DOTAShowTextTooltip(#CostTier5Armour)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_hide_tier_5" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonTier5-6" onactivate="OnBuyButtonPressed(6, 5)" onmouseover="DOTAShowTextTooltip(#CostTier5Armour)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_robes_tier_5" hittest="false" />
+				</Button>
+			</Panel>
+		</Panel>
+	</Panel>  
+
+</root>

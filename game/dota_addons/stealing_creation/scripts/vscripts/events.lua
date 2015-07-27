@@ -1,7 +1,7 @@
 -- Stealing Creation
--- By Richard Morrison (2015)
--- wigguno@gmail.com
+-- By wigguno
 -- http://steamcommunity.com/id/wigguno/
+
 
 -- Lua Events
 
@@ -62,7 +62,7 @@ function CStealingCreationGameMode:OnPlayerPickHero(keys)
 
 	mode.heroesSpawned = mode.heroesSpawned + 1
 	if mode.heroesSpawned == PlayerResource:GetPlayerCount() then
-		GameRules:SendCustomMessage("Welcome to Stealing Creation", DOTA_TEAM_NEUTRALS, 1)
+		GameRules:SendCustomMessage("Welcome to Dota the Gathering", DOTA_TEAM_NEUTRALS, 1)
 		GameRules:SendCustomMessage("By " .. COLOR_DPURPLE .. "wigguno", DOTA_TEAM_NEUTRALS, 1)
 		GameRules:SendCustomMessage("Game Length: " .. COLOR_SBLUE .. mode.game_length .. "m", DOTA_TEAM_NEUTRALS, 1)
 	end

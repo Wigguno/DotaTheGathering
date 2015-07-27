@@ -1,10 +1,10 @@
 -- Stealing Creation
--- By Richard Morrison (2015)
--- wigguno@gmail.com
+-- By wigguno
 -- http://steamcommunity.com/id/wigguno/
 
 -- Lua Spawning
 --   Handles spawning all kinds of units and setting their variables correctly
+
 function CStealingCreationGameMode:SpawnDoor(x, y, r, team, inside, outside, trigger)
 	local otherteam = nil
 	if team == DOTA_TEAM_GOODGUYS then otherteam = DOTA_TEAM_BADGUYS end
@@ -251,7 +251,7 @@ function CStealingCreationGameMode:SetupArena()
 
 	-----------------------------------------------------------------------------------------------------------------------
 	-- RADIANT EASY PLOTS
-	print("----- RADIANT EASY -----")
+	log("----- RADIANT EASY -----")
 
 	-- Do the guaranteed plots first
 	local crafter1_loc = table.removekey(self.SpawnTable.easy_radiant, GetRandomFromPlotTable(self.SpawnTable.easy_radiant))	
@@ -280,12 +280,12 @@ function CStealingCreationGameMode:SetupArena()
 			self:SpawnBirds(tonumber(plot_loc.x), tonumber(plot_loc.y), plot_tier)
 		end
 
-		print("Spawned tier " .. plot_tier .. " " .. plot_type)
+		log("Spawned tier " .. plot_tier .. " " .. plot_type)
 	end
 
 	-----------------------------------------------------------------------------------------------------------------------
 	-- DIRE EASY PLOTS
-	print("----- DIRE EASY -----")
+	log("----- DIRE EASY -----")
 
 	local crafter2_loc = table.removekey(self.SpawnTable.easy_dire, GetRandomFromPlotTable(self.SpawnTable.easy_dire))
 	local rags3_loc = table.removekey(self.SpawnTable.easy_dire, GetRandomFromPlotTable(self.SpawnTable.easy_dire))	
@@ -313,12 +313,12 @@ function CStealingCreationGameMode:SetupArena()
 			self:SpawnBirds(tonumber(plot_loc.x), tonumber(plot_loc.y), plot_tier)
 		end
 
-		print("Spawned tier " .. plot_tier .. " " .. plot_type)
+		log("Spawned tier " .. plot_tier .. " " .. plot_type)
 	end
 
 	-----------------------------------------------------------------------------------------------------------------------
 	-- MEDIUM 1 PLOTS
-	print("----- MEDIUM 1 -----")
+	log("----- MEDIUM 1 -----")
 
 	plotTierTable = {2, 3, 4 ,5}
 	plotTierRoll  = ChoicePseudoRNG.create( {0.2, 0.3, 0.4, 0.1} )
@@ -338,13 +338,13 @@ function CStealingCreationGameMode:SetupArena()
 			self:SpawnBirds(tonumber(plot_loc.x), tonumber(plot_loc.y), plot_tier)
 		end
 
-		print("Spawned tier " .. plot_tier .. " " .. plot_type)
+		log("Spawned tier " .. plot_tier .. " " .. plot_type)
 	end
 
 
 	-----------------------------------------------------------------------------------------------------------------------
 	-- MEDIUM 2 PLOTS
-	print("----- MEDIUM 2 -----")
+	log("----- MEDIUM 2 -----")
 
 	plotTierTable = {2, 3, 4 ,5}
 	plotTierRoll  = ChoicePseudoRNG.create( {0.2, 0.3, 0.4, 0.1} )
@@ -364,13 +364,13 @@ function CStealingCreationGameMode:SetupArena()
 			self:SpawnBirds(tonumber(plot_loc.x), tonumber(plot_loc.y), plot_tier)
 		end
 
-		print("Spawned tier " .. plot_tier .. " " .. plot_type)
+		log("Spawned tier " .. plot_tier .. " " .. plot_type)
 	end
 
 
 	-----------------------------------------------------------------------------------------------------------------------
 	-- HARD PLOTS
-	print("----- HARD -----")
+	log("----- HARD -----")
 
 	plotTierTable = {4 ,5}
 	plotTierRoll  = ChoicePseudoRNG.create( {0.2, 0.8} )
@@ -388,7 +388,7 @@ function CStealingCreationGameMode:SetupArena()
 	elseif plot_type == "Birds" then
 		self:SpawnBirds(tonumber(plot_loc.x), tonumber(plot_loc.y), plot_tier)
 	end
-	print("Spawned tier " .. plot_tier .. " " .. plot_type)
+	log("Spawned tier " .. plot_tier .. " " .. plot_type)
 
 	for i = 1,3 do
 		local plot_type = plotTypeTable[plotTypeRoll:Choose()]
@@ -405,7 +405,7 @@ function CStealingCreationGameMode:SetupArena()
 			self:SpawnBirds(tonumber(plot_loc.x), tonumber(plot_loc.y), plot_tier)
 		end
 
-		print("Spawned tier " .. plot_tier .. " " .. plot_type)
+		log("Spawned tier " .. plot_tier .. " " .. plot_type)
 	end
 
 end
@@ -420,7 +420,6 @@ function CStealingCreationGameMode:SpawnTestSetup()
 	local x = -6656
 	local y = -4608
 
-	--[[
 	self:SpawnTrees(x + (2048 * 0), y + (2048 * 0), 2)
 	self:SpawnTrees(x + (2048 * 1), y + (2048 * 0), 3)
 	self:SpawnTrees(x + (2048 * 2), y + (2048 * 0), 4)
@@ -441,7 +440,6 @@ function CStealingCreationGameMode:SpawnTestSetup()
 	self:SpawnBirds(x + (2048 * 2), y + (2048 * 3), 4)
 	self:SpawnBirds(x + (2048 * 3), y + (2048 * 3), 5)
 
-	]]
 	self:SpawnCrafter(x + (2048 * 1), y + (2048 * -1))
 	self:SpawnRags(x + (2048 * 2), y + (2048 * -1))
 end

@@ -55,7 +55,7 @@ function FindItemByName(npc, itemName)
 end
 
 function log(message)
-    print("[" .. math.floor(GameRules:GetDOTATime(false, true)) .. "] " .. message)
+    --print("[" .. math.floor(GameRules:GetDOTATime(false, true)) .. "] " .. message)
 end
 
 -- Colors

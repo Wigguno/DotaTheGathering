@@ -1,7 +1,7 @@
 -- Stealing Creation
--- By Richard Morrison (2015)
--- wigguno@gmail.com
+-- By wigguno
 -- http://steamcommunity.com/id/wigguno/
+
 
 -- Lua Gathering
 -- these functions are called by RunScript blocks from the helper ability

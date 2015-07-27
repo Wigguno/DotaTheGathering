@@ -1,7 +1,8 @@
 -- Stealing Creation
--- By Richard Morrison (2015)
--- wigguno@gmail.com
+-- By wigguno
 -- http://steamcommunity.com/id/wigguno/
+
+-- Ty Based Crazyloon for the name "Dota the Gathering"
 
 -- put the class into the global namespace so our external lua files work
 if CStealingCreationGameMode == nil then
@@ -46,24 +47,16 @@ function Precache( context )
 	PrecacheResource("particle", "particles/gather_4.vpcf", context)
 	PrecacheResource("particle", "particles/gather_5.vpcf", context)
 
-	--[[
-	PrecacheResource("particle", "particles/shield_armour/shield_armour.vcpf", context)
-	PrecacheResource("particle", "particles/shield_hide/shield_hide.vcpf", context)
-	PrecacheResource("particle", "particles/shield_robes/shield_robes.vcpf", context)
-	PrecacheResource("particle", "particles/projectile_sword/sword_projectile.vpcf", context)
-	PrecacheResource("particle", "particles/projectile_bow/bow_projectile.vpcf", context)
-	PrecacheResource("particle", "particles/projectile_staff/staff_projectile.vpcf", context)
-	]]
-
 	-- all the particles are defined n the tier 1 items
-	PrecacheItemByNameSync("item_sc_sword_tier_1", context)
-	PrecacheItemByNameSync("item_sc_bow_tier_1", context)
-	PrecacheItemByNameSync("item_sc_staff_tier_1", context)
+	PrecacheItemByNameSync("item_sc_sword_tier_1", 	context)
 	PrecacheItemByNameSync("item_sc_armour_tier_1", context)
-	PrecacheItemByNameSync("item_sc_hide_tier_1", context)
-	PrecacheItemByNameSync("item_sc_robes_tier_1", context)
 
 	--[[
+	PrecacheItemByNameSync("item_sc_bow_tier_1", 	context)
+	PrecacheItemByNameSync("item_sc_staff_tier_1", 	context)
+
+	PrecacheItemByNameSync("item_sc_hide_tier_1", 	context)
+	PrecacheItemByNameSync("item_sc_robes_tier_1", 	context)
 
 	PrecacheItemByNameSync("item_sc_sword_tier_2", context)
 	PrecacheItemByNameSync("item_sc_sword_tier_3", context)
@@ -102,7 +95,7 @@ function Activate()
 end
 
 function CStealingCreationGameMode:InitGameMode()
-	print( "Loading Stealing Creation..." )
+	print( "Loading Dota the Gathering..." )
 
 	math.randomseed(Time())
 	self.heroesSpawned = 0
@@ -116,12 +109,12 @@ function CStealingCreationGameMode:InitGameMode()
 	self.NodeCount 			= 0
 	self.EndGameCountdown 	= 30
 
-	--self:SetupArena()
-	self:SpawnTestSetup()
+	self:SetupArena()
+	--self:SpawnTestSetup()
 
 	GameRules:SetGoldPerTick( 0 )
 	GameRules:SetPreGameTime( 60 * 20 )
-	GameRules:SetPostGameTime( 60 * 60 )
+	GameRules:SetPostGameTime( 60 )
 	GameRules:SetCustomVictoryMessageDuration( 1 )
 
 	GameRules:SetSameHeroSelectionEnabled( true )	
