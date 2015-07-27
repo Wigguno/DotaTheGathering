@@ -17,6 +17,9 @@ function killNode(node)
 	node:RemoveAbility("ability_sc_node_prop")
 	node:RemoveModifierByName("modifier_sc_prop")
 	node:ForceKill(false)
+
+	local mode = GameRules.stealing_creation
+	mode.NodeCount = mode.NodeCount - 1
 end
 
 function GatherClay(clayLevel, gatherCount, gatherPlayer, gatherHero)
@@ -66,12 +69,13 @@ function OnGather(keys, tier)
 		mode.ScoreTable[pid]["type" .. tier] = mode.ScoreTable[pid]["type" .. tier] + 1
 		mode.ScoreTable[pid]["score"] = RecalculateScore(pid)
 		--print("[" .. pid .. "] newscore: " .. mode.ScoreTable[pid]["score"])
-		CustomNetTables:SetTableValue("score_table", "player_" .. pid, {score=mode.ScoreTable[pid]["score"]})
+		CustomNetTables:SetTableValue("score_table", "player_" .. pid, mode.ScoreTable[pid])
 
 		if gatherNode_Health == 1 then
-			print("Killing node")
+			--print("Killing node")
 			killNode(gatherNode)
 			gatherHero:RemoveModifierByName("modifier_gathering_node_" .. tier)
+			RemoveHighlightNode(keys)
 		end
 
 		gatherNode:SetHealth(gatherNode_Health - 1)

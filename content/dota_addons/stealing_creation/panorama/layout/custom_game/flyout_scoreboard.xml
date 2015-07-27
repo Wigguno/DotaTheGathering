@@ -1,0 +1,31 @@
+<root>
+    <styles>
+ 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/custom_game/sc_scoreboard_styles.css" />
+        <include src="file://{resources}/styles/custom_game/flyout_scoreboard.css" />
+    </styles>
+
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/sc_scoreboard_updater.js" />
+        <include src="file://{resources}/scripts/custom_game/flyout_scoreboard.js" />
+    </scripts>
+
+  <Panel hittest="false" class="FlyoutScoreboardRoot">
+		<Panel class="Legend">
+			<Panel class="LegendPanel ScoreCol_TeamInfo" />
+			<Panel class="LegendPanel ScoreCol_Hero" />
+			<Panel class="LegendPanel ScoreCol_PlayerDetails" />
+			<Label class="LegendPanel ScoreCol_Kills" text="#custom_end_screen_legend_kills" />
+			<Label class="LegendPanel ScoreCol_Deaths" text="#custom_end_screen_legend_deaths" />
+			<Label class="LegendPanel ScoreCol_ScoreTotal" text="#scoreboard_player_score" />
+			<Label class="LegendPanel ScoreCol_ScoreTier1" text="#scoreboard_player_tier1_count" />
+			<Label class="LegendPanel ScoreCol_ScoreTier2" text="#scoreboard_player_tier2_count" />
+			<Label class="LegendPanel ScoreCol_ScoreTier3" text="#scoreboard_player_tier3_count" />
+			<Label class="LegendPanel ScoreCol_ScoreTier4" text="#scoreboard_player_tier4_count" />
+			<Label class="LegendPanel ScoreCol_ScoreTier5" text="#scoreboard_player_tier5_count" />
+		</Panel>
+		<Panel id="TeamsContainer" />
+  </Panel>
+</root>
+
+

@@ -1,0 +1,45 @@
+<root>
+    <styles>
+ 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+        <include src="file://{resources}/styles/custom_game/end_screen.css" />
+    </styles>
+
+	<Panel class="PlayerRow">
+		<Panel id="PlayerRowContainer">
+			<Panel id="Hero" class="ScoreCol_Hero ScoreboardPanel">
+				<DOTAHeroImage id="HeroIcon" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" />
+			</Panel>
+			<Panel id="PlayerDetailsContainer" class="ScoreCol_PlayerDetails ScoreboardPanel">
+				<Panel id="PlayerAndHeroName">
+					<Label id="PlayerName" text="AAAAA" />
+					<Label id="HeroNameAndDescription" text="#custom_scoreboard_hero_name_and_desc" />
+				</Panel>
+			</Panel>
+			<Panel id="KillsContainer" class="ScoreCol_Kills ScoreboardPanel">
+				<Label id="Kills" text="999" />
+			</Panel>
+			<Panel id="DeathsContainer" class="ScoreCol_Deaths ScoreboardPanel">
+				<Label id="Deaths" text="999" />
+			</Panel>
+
+			<Panel id="ScoreContainer" class="ScoreCol_Score ScoreboardPanel">
+				<Label id="Score" text="999" />
+			</Panel>
+			<Panel id="Tier1Container" class="ScoreCol_Tier1 ScoreboardPanel">
+				<Label id="Tier1" text="999" />
+			</Panel>
+			<Panel id="Tier2Container" class="ScoreCol_Tier2 ScoreboardPanel">
+				<Label id="Tier2" text="999" />
+			</Panel>
+			<Panel id="Tier3Container" class="ScoreCol_Tier3 ScoreboardPanel">
+				<Label id="Tier3" text="999" />
+			</Panel>
+			<Panel id="Tier4Container" class="ScoreCol_Tier4 ScoreboardPanel">
+				<Label id="Tier4" text="999" />
+			</Panel>
+			<Panel id="Tier5Container" class="ScoreCol_Tier5 ScoreboardPanel">
+				<Label id="Tier5" text="999" />
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

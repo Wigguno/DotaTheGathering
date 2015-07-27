@@ -54,6 +54,10 @@ function FindItemByName(npc, itemName)
     return nil
 end
 
+function log(message)
+    print("[" .. math.floor(GameRules:GetDOTATime(false, true)) .. "] " .. message)
+end
+
 -- Colors
 COLOR_NONE = '\x06'
 COLOR_GRAY = '\x06'

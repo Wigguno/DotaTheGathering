@@ -96,6 +96,7 @@ function CStealingCreationGameMode:SpawnRags(x, y)
 			prop_rags_click:SetAngles(0.0, angle, 0)
 			return
 		end)
+		self.NodeCount = self.NodeCount + 1
 	end
 
 	for n = 1,5 do
@@ -117,6 +118,7 @@ function CStealingCreationGameMode:SpawnRags(x, y)
 			prop_rags_click:SetAngles(0.0, angle, 0)
 			return
 		end)
+		self.NodeCount = self.NodeCount + 1
 	end
 end
 
@@ -140,6 +142,7 @@ function CStealingCreationGameMode:SpawnTrees(x, y, tier)
 		prop_tree.wander 			= 256
 		prop_tree.next_wander_time 	= GameRules:GetGameTime() + math.random(5, 10)
 		table.insert(self.ThinkerTable, prop_tree)
+		self.NodeCount = self.NodeCount + 1
 	end
 end
 
@@ -163,6 +166,7 @@ function CStealingCreationGameMode:SpawnFish(x, y, tier)
 		prop_fish.wander 			= 256
 		prop_fish.next_wander_time 	= GameRules:GetGameTime() + math.random(5, 10)
 		table.insert(self.ThinkerTable, prop_fish)
+		self.NodeCount = self.NodeCount + 1
 	end
 end
 
@@ -186,6 +190,7 @@ function CStealingCreationGameMode:SpawnRocks(x, y, tier)
 		prop_rock.wander 			= 256
 		prop_rock.next_wander_time 	= GameRules:GetGameTime() + math.random(5, 10)
 		table.insert(self.ThinkerTable, prop_rock)
+		self.NodeCount = self.NodeCount + 1
 	end
 end
 
@@ -209,6 +214,7 @@ function CStealingCreationGameMode:SpawnBirds(x, y, tier)
 		prop_bird.wander 			= 256
 		prop_bird.next_wander_time 	= GameRules:GetGameTime() + math.random(5, 10)
 		table.insert(self.ThinkerTable, prop_bird)
+		self.NodeCount = self.NodeCount + 1
 	end
 end
 
@@ -414,6 +420,7 @@ function CStealingCreationGameMode:SpawnTestSetup()
 	local x = -6656
 	local y = -4608
 
+	--[[
 	self:SpawnTrees(x + (2048 * 0), y + (2048 * 0), 2)
 	self:SpawnTrees(x + (2048 * 1), y + (2048 * 0), 3)
 	self:SpawnTrees(x + (2048 * 2), y + (2048 * 0), 4)
@@ -434,6 +441,7 @@ function CStealingCreationGameMode:SpawnTestSetup()
 	self:SpawnBirds(x + (2048 * 2), y + (2048 * 3), 4)
 	self:SpawnBirds(x + (2048 * 3), y + (2048 * 3), 5)
 
+	]]
 	self:SpawnCrafter(x + (2048 * 1), y + (2048 * -1))
 	self:SpawnRags(x + (2048 * 2), y + (2048 * -1))
 end

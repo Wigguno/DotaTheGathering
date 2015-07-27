@@ -110,16 +110,19 @@ function CStealingCreationGameMode:InitGameMode()
 	self:RegisterEventHandlers()
 	self:SpawnBaseEntities()
 
-	self.ThinkerTable 	= {}
-	self.ScoreTable 	= {}
-	self.VoteTable 		= {}
+	self.ThinkerTable 		= {}
+	self.ScoreTable 		= {}
+	self.VoteTable 			= {}
+	self.NodeCount 			= 0
+	self.EndGameCountdown 	= 30
 
 	--self:SetupArena()
 	self:SpawnTestSetup()
 
 	GameRules:SetGoldPerTick( 0 )
 	GameRules:SetPreGameTime( 60 * 20 )
-	GameRules:SetPostGameTime( 1 )
+	GameRules:SetPostGameTime( 60 * 60 )
+	GameRules:SetCustomVictoryMessageDuration( 1 )
 
 	GameRules:SetSameHeroSelectionEnabled( true )	
 	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, 5)
@@ -141,7 +144,8 @@ end
 
 
 function CStealingCreationGameMode:OnThink()
-	if GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME and not self.EndGameNow == true then
+
+	if GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME and not self.EndGameNow == true and self.EndGameCountdown > 0 then
 
 		--print( "Template addon script is running." )
 
@@ -167,7 +171,23 @@ function CStealingCreationGameMode:OnThink()
 			end
 		end
 
-	elseif GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS or (GameRules:State_Get() < DOTA_GAMERULES_STATE_POST_GAME and self.EndGameNow == true) then
+		--log("Node Count: " .. self.NodeCount)
+		if self.NodeCount == 0 then
+			if self.EndGameCountdown == 30 then				
+				local event_data =
+				{
+					text = "Notify_GameEnding",
+					duration = 5,
+				}
+				CustomGameEventManager:Send_ServerToAllClients( "js_notification", event_data )
+			end
+			self.EndGameCountdown = self.EndGameCountdown - 1
+			--log("EndGameCountdown: " .. self.EndGameCountdown)
+		end
+
+	elseif GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS
+	or (GameRules:State_Get() < DOTA_GAMERULES_STATE_POST_GAME and self.EndGameNow == true) 
+	or (GameRules:State_Get() < DOTA_GAMERULES_STATE_POST_GAME and self.EndGameCountdown == 0) then
 		-- calculate the winrar
 		local direPointsTotal 		= 0
 		local radiantPointsTotal 	= 0

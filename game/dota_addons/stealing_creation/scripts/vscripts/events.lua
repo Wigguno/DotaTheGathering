@@ -55,7 +55,7 @@ function CStealingCreationGameMode:OnPlayerPickHero(keys)
 	CustomNetTables:SetTableValue("gather_table_p" .. pid, "type_3", {count=0})
 	CustomNetTables:SetTableValue("gather_table_p" .. pid, "type_4", {count=0})
 	CustomNetTables:SetTableValue("gather_table_p" .. pid, "type_5", {count=0})
-	CustomNetTables:SetTableValue("score_table", "player_" .. pid, {score=0})
+	CustomNetTables:SetTableValue("score_table", "player_" .. pid, {score=0, type1=0, type2=0, type3=0, type4=0, type5=0})
 
 	local mode = GameRules.stealing_creation
 	mode.ScoreTable[pid] = {type1=0, type2=0, type3=0, type4=0, type5=0, crafting=0, score=0}
@@ -281,7 +281,7 @@ function CStealingCreationGameMode:OnDepositItems(keys)
 	local mode = GameRules.stealing_creation
 	mode.ScoreTable[pid]["crafting"] 	= mode.ScoreTable[pid]["crafting"] + points
 	mode.ScoreTable[pid]["score"] 		= RecalculateScore(pid)
-	CustomNetTables:SetTableValue("score_table", "player_" .. pid, {score = mode.ScoreTable[pid]["score"]})
+	CustomNetTables:SetTableValue("score_table", "player_" .. pid, mode.ScoreTable[pid])
 
 end
 

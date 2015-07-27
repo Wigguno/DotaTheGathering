@@ -6,6 +6,7 @@
 	"ResourceTier4"									"Tier 4: Gold"
 	"ResourceTier5"									"Tier 5: Jade"
 
+	"Notify_GameEnding"								"Game Ending in 30 Seconds"
 	"Notify_AbilityMax"								"Ability at max level"
 	"Notify_AbilityNeed0"							"You need 25 clay to level this ability"
 	"Notify_AbilityNeed1"							"You need 30 ice to level this ability"
@@ -61,4 +62,11 @@
 	"Gather_HuntingLevel2"							"You need Hunting level 2 to gather this resource"
 	"Gather_HuntingLevel3"							"You need Hunting level 3 to gather this resource"
 	"Gather_HuntingLevel4"							"You need Hunting level 4 to gather this resource"
+
+	"scoreboard_player_score"						"Score"
+	"scoreboard_player_tier1_count"					"Clay"
+	"scoreboard_player_tier2_count"					"Ice"
+	"scoreboard_player_tier3_count"					"Marble"
+	"scoreboard_player_tier4_count"					"Gold"
+	"scoreboard_player_tier5_count"					"Jade"
 }
