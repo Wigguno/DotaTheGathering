@@ -1,4 +1,4 @@
--- Stealing Creation
+-- Dota the Gathering
 -- By wigguno
 -- http://steamcommunity.com/id/wigguno/
 

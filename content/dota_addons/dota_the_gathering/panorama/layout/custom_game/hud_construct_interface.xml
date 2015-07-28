@@ -83,6 +83,14 @@
 					<DOTAItemImage itemname="item_sc_armour_tier_5" hittest="false" />
 				</Button>
 			</Panel>
+
+			<Panel class="ContainerItemUpgrades ContainerRow" hittest="false">
+				
+				<Button class="ItemBuyButton" id="ItemBuyButtonBarrier1" onactivate="OnBuyButtonPressed(7, 1)" onmouseover="DOTAShowTextTooltip(#CostTier1Barrier)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_barrier_tier_1" hittest="false" />
+				</Button>
+
+			</Panel>
 		</Panel>
 	</Panel>  
 

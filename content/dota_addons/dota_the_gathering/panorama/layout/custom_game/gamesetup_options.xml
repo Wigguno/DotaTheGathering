@@ -24,10 +24,10 @@
 					<Panel class="CustomGameSettingPanelDivider" hittest="false" />
 					<Panel class="ContainerCustomGameSettingOptions" hittest="false">
 						
-						<RadioButton class="CGSRadio" group="GameLength" id="GameLengthRadio15" text="15 Minutes" onactivate="OnGLRadioButton(15)" />
-						<RadioButton class="CGSRadio" group="GameLength" id="GameLengthRadio20" text="20 Minutes" onactivate="OnGLRadioButton(20)" />
-						<RadioButton class="CGSRadio" group="GameLength" id="GameLengthRadio25" text="25 Minutes" onactivate="OnGLRadioButton(25)" />
-						<RadioButton class="CGSRadio" group="GameLength" id="GameLengthRadio30" text="30 Minutes" onactivate="OnGLRadioButton(30)" />
+						<RadioButton class="CGSRadio" group="GameLength" text="15 Minutes" onactivate="OnVoteButtonPressed('game_length', 15)" />
+						<RadioButton class="CGSRadio" group="GameLength" text="20 Minutes" onactivate="OnVoteButtonPressed('game_length', 20)" />
+						<RadioButton class="CGSRadio" group="GameLength" text="25 Minutes" onactivate="OnVoteButtonPressed('game_length', 25)" />
+						<RadioButton class="CGSRadio" group="GameLength" text="30 Minutes" onactivate="OnVoteButtonPressed('game_length', 30)" />
 
 					</Panel>
 				</Panel>
@@ -41,8 +41,8 @@
 					<Panel class="CustomGameSettingPanelDivider" hittest="false" />
 					<Panel class="ContainerCustomGameSettingOptions" hittest="false">
 
-						<RadioButton class="CGSRadio" group="CombatSystem" id="CombatSystemRadioSimple" 	text="Simple"	onactivate="OnCSRadioButton(1)" />
-						<RadioButton class="CGSRadio" group="CombatSystem" id="CombatSystemRadioTriangle" 	text="Triangle"	onactivate="OnCSRadioButton(2)" />
+						<RadioButton class="CGSRadio" group="CombatSystem" text="Simple" onactivate="OnVoteButtonPressed('combat_system', 1)" />
+						<RadioButton class="CGSRadio" group="CombatSystem" text="Triangle" onactivate="OnVoteButtonPressed('combat_system', 2)" />
 
 					</Panel>
 				</Panel>

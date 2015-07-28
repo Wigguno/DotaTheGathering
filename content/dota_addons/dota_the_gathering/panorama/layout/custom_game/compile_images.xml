@@ -39,5 +39,7 @@
 		<Image src="file://{images}/items/robes_tier_3.png" hittest="false"/>
 		<Image src="file://{images}/items/robes_tier_4.png" hittest="false"/>
 		<Image src="file://{images}/items/robes_tier_5.png" hittest="false"/>
+
+		<Image src="file://{images}/items/barrier_tier_1.png" hittest="false"/>
 	</Panel>
 </root>

@@ -2,7 +2,7 @@
 "DOTAAbilities"
 {
 	"Version"		"1"
-
+	
 	"ability_sc_hero_helper"
 	{
 		"BaseClass"					"ability_datadriven"
@@ -315,6 +315,58 @@
 				
 				"StatusEffectName" 		"particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_jade_stone_dire.vpcf"
 				"StatusEffectPriority" 	"10"
+			}
+		}
+	}
+
+	"ability_sc_link_health"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+		"Modifiers"
+		{
+			"modifier_sc_link_health"
+			{
+				"Passive"				"1"
+				"Hidden"				"1"				
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items.lua"
+						"Function"		"OnHealthLinkDamaged"
+					}
+				}	
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items.lua"
+						"Function"		"OnHealthLinkDeath"
+					}
+				}			
+			}
+		}
+	}
+
+	"ability_sc_unobstructed_movement"
+	{
+		"BaseClass" 				"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+		"Modifiers"
+		{
+			"modifier_sc_unobstructed_movement"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"States"
+				{
+					"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
 			}
 		}
 	}

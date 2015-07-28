@@ -2355,4 +2355,39 @@
 			}
 		}
 	}	
+
+	"item_sc_barrier_tier_1"
+	{
+		"ID"					"3041"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_barrier_tier_1"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemInitialCharges" 	"1" //How many charges should the item start with - Tango x3 
+		"ItemDisplayCharges" 	"0" //Hide the charges of the item - Aegis 
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"1"
+		"AbilityCooldown"		"2"
+		"AbilitySharedCooldown" "itemBarrierPlacer"
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnBarrierPlace"
+				"Target"			"POINT"
+			}
+			"SpendCharge" {}
+		}
+	}
 }

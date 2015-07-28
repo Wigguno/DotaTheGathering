@@ -1,15 +1,10 @@
 "use strict";
 
-function OnGLRadioButton(data)
+function OnVoteButtonPressed(category, vote)
 {
-	//a$.Msg("Game Length Radio Pressed: ", data);
-	GameEvents.SendCustomGameEventToServer( "setting_vote", { "category":"game_length", "vote":data } );
-}
-
-function OnCSRadioButton(data)
-{
-	//$.Msg("Combat System Radio Pressed: ", data);
-	GameEvents.SendCustomGameEventToServer( "setting_vote", { "category":"combat_system", "vote":data } );
+	//$.Msg("Category: ", category);
+	//$.Msg("Vote: ", vote);
+	GameEvents.SendCustomGameEventToServer( "setting_vote", { "category":category, "vote":vote } );
 }
 
 // This function is called at the start

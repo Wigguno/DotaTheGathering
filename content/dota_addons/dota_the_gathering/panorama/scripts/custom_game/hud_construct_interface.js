@@ -80,10 +80,10 @@ function OnUpgradeAbility(abil_index)
 	GameEvents.SendCustomGameEventToServer( "upgrade_ability", { "ability_name" : abilityName} );
 }
 
-var itemTable = ["sword", "bow", "staff", "armour", "hide", "robes"]
+var itemTable = ["sword", "bow", "staff", "armour", "hide", "robes", "barrier"]
 function OnBuyButtonPressed(index, tier)
 {	
-	// indices: 1:Sword, 2:Bow, 3:Staff, 4:Armour, 5:Hide, 6:Robes
+	// indices: 1:Sword, 2:Bow, 3:Staff, 4:Armour, 5:Hide, 6:Robes, 7:Barrier
 
 	//$.Msg("Buy Button Index ", index, " - tier: ", tier);
 	GameEvents.SendCustomGameEventToServer( "purchase_item", {"item_name":itemTable[index - 1], "item_tier":tier})

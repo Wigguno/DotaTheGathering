@@ -1,4 +1,4 @@
--- Stealing Creation
+-- Dota the Gathering
 -- By wigguno
 -- http://steamcommunity.com/id/wigguno/
 
@@ -179,9 +179,10 @@ function GetMatCountOrLower(matAmount, minMatType, pid)
 	return returnTable
 end
 
-abilityUpgradeCostTable = {25, 30, 35, 40}
-weaponPurchaseCostTable = {20, 25, 30, 35, 40}
-armourPurchaseCostTable = {30, 35, 40 ,45, 50}
+abilityUpgradeCostTable 	= {25, 30, 35, 40}
+weaponPurchaseCostTable 	= {20, 25, 30, 35, 40}
+armourPurchaseCostTable 	= {30, 35, 40 ,45, 50}
+barrierPurchaseCostTable 	= {50, 50, 50, 50, 50}
 
 function CStealingCreationGameMode:OnUpgradeAbilityRequest(keys)
 	local pid 			= keys.PlayerID
@@ -289,15 +290,20 @@ function CStealingCreationGameMode:OnPurchaseItemRequest(keys)
 	local player 		= PlayerResource:GetPlayer(pid)
 	local hero 			= player:GetAssignedHero()
 	local item 			= "item_sc_" .. keys.item_name .. "_tier_" .. keys.item_tier
-	local isWeapon 		= nil
+	local purchaseType	= nil
 	local purchaseCost 	= nil
 
 	if keys.item_name == "sword" or keys.item_name == "bow" or keys.item_name == "staff" then
-		isWeapon 		= true
+		purchaseType 	= "Weapon"
 		purchaseCost 	= weaponPurchaseCostTable[keys.item_tier]
-	else
-		isWeapon 		= false
+	elseif keys.item_name == "armour" or keys.item_name == "hide" or keys.item_name == "robes" then
+		purchaseType 	= "Armour"
 		purchaseCost 	= armourPurchaseCostTable[keys.item_tier]
+	elseif keys.item_name == "barrier" then
+		purchaseType 	= "Barrier"
+		purchaseCost 	= barrierPurchaseCostTable[keys.item_tier]
+	else
+		return
 	end
 
 	local gotMats = GetMatCountOrLower(purchaseCost, keys.item_tier, pid)
@@ -309,11 +315,10 @@ function CStealingCreationGameMode:OnPurchaseItemRequest(keys)
 		local oldTable = CustomNetTables:GetTableValue("gather_table_p" .. pid, "type_" .. gotMats.matType)
 		CustomNetTables:SetTableValue("gather_table_p" .. pid, "type_" .. gotMats.matType, {count=oldTable.count - purchaseCost})
 	else
-		local textstr = "Notify_WeaponNeed"
-		if not isWeapon then textstr = "Notify_ArmourNeed" end
+		local textstr = "Notify_" .. purchaseType .. "Need" .. keys.item_tier
 		local event_data =
 		{
-			text = textstr .. keys.item_tier,
+			text = textstr,
 			duration = 2,
 		}
 		CustomGameEventManager:Send_ServerToPlayer( player, "js_notification", event_data )

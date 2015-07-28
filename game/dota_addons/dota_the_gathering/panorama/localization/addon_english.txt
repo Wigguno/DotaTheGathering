@@ -25,6 +25,8 @@
 	"Notify_ArmourNeed4"							"You need 45 Gold to buy this armour"
 	"Notify_ArmourNeed5"							"You need 50 Jade to buy this armour"
 
+	"Notify_BarrierNeed1"							"You need 50 Clay to buy this barrier"
+
 	"CostTier0Ability"								"25 x Clay"
 	"CostTier1Ability"								"30 x Ice"
 	"CostTier2Ability"								"35 x Marble"
@@ -42,6 +44,8 @@
 	"CostTier3Armour"								"40 Marble"
 	"CostTier4Armour"								"45 Gold"
 	"CostTier5Armour"								"50 Jade"
+
+	"CostTier1Barrier"								"50 Clay"
 
 	"Gather_FishingLevel1"							"You need Fishing level 1 to gather this resource"
 	"Gather_FishingLevel2"							"You need Fishing level 2 to gather this resource"
