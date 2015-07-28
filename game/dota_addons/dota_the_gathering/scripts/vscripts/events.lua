@@ -147,6 +147,7 @@ function CStealingCreationGameMode:OnGameRulesStateChange(keys)
 
 			print(category .. ": " .. highest_key)
 
+			PlayerResource:SetCustomTeamAssignment( 0, DOTA_TEAM_CUSTOM_1 )
 		end
 	end
 end

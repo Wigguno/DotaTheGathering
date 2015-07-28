@@ -3,9 +3,27 @@
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 		<include src="file://{resources}/styles/custom_game/gamesetup_options.css" />
 	</styles> 
-	<scripts>
-		<include src="file://{resources}/scripts/custom_game/gamesetup_options.js" />
-	</scripts>
+	<script>
+
+		function OnVoteButtonPressed(category, vote)
+		{
+			//$.Msg("Category: ", category);
+			//$.Msg("Vote: ", vote);
+			GameEvents.SendCustomGameEventToServer( "setting_vote", { "category":category, "vote":vote } );
+		}
+
+		// This function is called at the start
+		(function() {
+			if (GameUI.CustomUIConfig().DebugMessagesEnabled == true)
+			{
+				$.Msg("GameSetup Options Initialised");
+				Game.SetRemainingSetupTime( -1 );
+				Game.SetAutoLaunchEnabled( false );
+			}
+
+		})();
+		
+	</script>
 	
 	<Panel class="ContainerGameSetup" hittest="false">
 		<Panel class="CustomSettingsColumn" hittest="false" >
