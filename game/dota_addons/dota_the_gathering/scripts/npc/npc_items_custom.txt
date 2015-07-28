@@ -2358,7 +2358,7 @@
 
 	"item_sc_barrier_tier_1"
 	{
-		"ID"					"3041"
+		"ID"					"3071"
 		"BaseClass"				"item_datadriven"
 		"AbilityTextureName" 	"item_barrier_tier_1"
 
@@ -2375,9 +2375,19 @@
 		"ItemPermanent" 		"0"
 
 		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-		"AbilityChannelTime" 	"1"
-		"AbilityCooldown"		"2"
+		"AbilityChannelTime" 	"10"
+		"AbilityCooldown"		"30"
 		"AbilitySharedCooldown" "itemBarrierPlacer"
+		"AbilityCastRange" 		"200"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"health"			"1000"
+			}
+		}
 
 		"OnChannelSucceeded"
 		{
@@ -2386,6 +2396,189 @@
 				"ScriptFile"		"items.lua"
 				"Function"			"OnBarrierPlace"
 				"Target"			"POINT"
+				"Tier"				"1"
+			}
+			"SpendCharge" {}
+		}
+	}
+
+	"item_sc_barrier_tier_2"
+	{
+		"ID"					"3072"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_barrier_tier_2"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemInitialCharges" 	"1" //How many charges should the item start with - Tango x3 
+		"ItemDisplayCharges" 	"0" //Hide the charges of the item - Aegis 
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"10"
+		"AbilityCooldown"		"30"
+		"AbilitySharedCooldown" "itemBarrierPlacer"
+		"AbilityCastRange" 		"200"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"health"			"2000"
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnBarrierPlace"
+				"Target"			"POINT"
+				"Tier"				"2"
+			}
+			"SpendCharge" {}
+		}
+	}
+	"item_sc_barrier_tier_3"
+	{
+		"ID"					"3073"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_barrier_tier_3"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemInitialCharges" 	"1" //How many charges should the item start with - Tango x3 
+		"ItemDisplayCharges" 	"0" //Hide the charges of the item - Aegis 
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"10"
+		"AbilityCooldown"		"30"
+		"AbilitySharedCooldown" "itemBarrierPlacer"
+		"AbilityCastRange" 		"200"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"health"			"3000"
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnBarrierPlace"
+				"Target"			"POINT"
+				"Tier"				"3"
+			}
+			"SpendCharge" {}
+		}
+	}
+	"item_sc_barrier_tier_4"
+	{
+		"ID"					"3074"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_barrier_tier_4"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemInitialCharges" 	"1" //How many charges should the item start with - Tango x3 
+		"ItemDisplayCharges" 	"0" //Hide the charges of the item - Aegis 
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"10"
+		"AbilityCooldown"		"30"
+		"AbilitySharedCooldown" "itemBarrierPlacer"
+		"AbilityCastRange" 		"200"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"health"			"4000"
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnBarrierPlace"
+				"Target"			"POINT"
+				"Tier"				"4"
+			}
+			"SpendCharge" {}
+		}
+	}
+	"item_sc_barrier_tier_5"
+	{
+		"ID"					"3075"
+		"BaseClass"				"item_datadriven"
+		"AbilityTextureName" 	"item_barrier_tier_5"
+
+		"ItemCost"				"0"
+		"ItemKillable"			"0"
+		"ItemPurchasable" 		"0"
+		"ItemDroppable"			"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemInitialCharges" 	"1" //How many charges should the item start with - Tango x3 
+		"ItemDisplayCharges" 	"0" //Hide the charges of the item - Aegis 
+
+		"ItemStackable" 		"0"
+		"ItemPermanent" 		"0"
+
+		"AbilityBehavior" 		"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityChannelTime" 	"10"
+		"AbilityCooldown"		"30"
+		"AbilitySharedCooldown" "itemBarrierPlacer"
+		"AbilityCastRange" 		"200"
+
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"health"			"5000"
+			}
+		}
+
+		"OnChannelSucceeded"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"OnBarrierPlace"
+				"Target"			"POINT"
+				"Tier"				"5"
 			}
 			"SpendCharge" {}
 		}

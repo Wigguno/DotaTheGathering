@@ -4,7 +4,7 @@
 
 -- Lua Events
 
-function CStealingCreationGameMode:AddAllMats(keys)
+function DTGGameMode:AddAllMats(keys)
 	for pid = 0,9 do if PlayerResource:IsValidPlayer(pid) then		
 		CustomNetTables:SetTableValue("gather_table_p" .. pid, "type_1", {count=9999})
 		CustomNetTables:SetTableValue("gather_table_p" .. pid, "type_2", {count=9999})
@@ -14,13 +14,13 @@ function CStealingCreationGameMode:AddAllMats(keys)
 	end end
 end
 
-function CStealingCreationGameMode:EndGame(keys)
+function DTGGameMode:EndGame(keys)
 	print("Ending game")
-	GameRules.stealing_creation.EndGameNow = true
+	GameRules.DTGGameMode.EndGameNow = true
 end
 
 function RecalculateScore(pid)
-	local mode = GameRules.stealing_creation
+	local mode = GameRules.DTGGameMode
 	local score = mode.ScoreTable[pid]["type1"]
 	score = score + (mode.ScoreTable[pid]["type2"] * 2)
 	score = score + (mode.ScoreTable[pid]["type3"] * 3)
@@ -30,7 +30,7 @@ function RecalculateScore(pid)
 	return score
 end
 
-function CStealingCreationGameMode:OnPlayerPickHero(keys)
+function DTGGameMode:OnPlayerPickHero(keys)
 	--print("OnPlayerPickHero")
 	--PrintTable(keys)
 
@@ -56,9 +56,10 @@ function CStealingCreationGameMode:OnPlayerPickHero(keys)
 	CustomNetTables:SetTableValue("gather_table_p" .. pid, "type_5", {count=0})
 	CustomNetTables:SetTableValue("score_table", "player_" .. pid, {score=0, type1=0, type2=0, type3=0, type4=0, type5=0})
 
-	local mode = GameRules.stealing_creation
+	local mode = GameRules.DTGGameMode
 	mode.ScoreTable[pid] = {type1=0, type2=0, type3=0, type4=0, type5=0, crafting=0, score=0}
 
+	-- heroesSpawned is initialised in InitGameMode()
 	mode.heroesSpawned = mode.heroesSpawned + 1
 	if mode.heroesSpawned == PlayerResource:GetPlayerCount() then
 		GameRules:SendCustomMessage("Welcome to Dota the Gathering", DOTA_TEAM_NEUTRALS, 1)
@@ -68,12 +69,12 @@ function CStealingCreationGameMode:OnPlayerPickHero(keys)
 
 end
 
-function CStealingCreationGameMode:OnGameRulesStateChange(keys)
+function DTGGameMode:OnGameRulesStateChange(keys)
 	--print("Game State Change")
 	local state = GameRules:State_Get()
 
 	if state == DOTA_GAMERULES_STATE_HERO_SELECTION then
-		local mode 	= GameRules.stealing_creation
+		local mode 	= GameRules.DTGGameMode
 		local votes = mode.VoteTable
 
 		--[[
@@ -137,28 +138,27 @@ function CStealingCreationGameMode:OnGameRulesStateChange(keys)
 			elseif category == "combat_system" then
 				local gme = GameRules:GetGameModeEntity()
 				if highest_key == 1 then
-					gme:SetDamageFilter( Dynamic_Wrap (CStealingCreationGameMode, "DamageFilter_Simple" ), self )
+					gme:SetDamageFilter( Dynamic_Wrap (DTGGameMode, "DamageFilter_Simple" ), self )
 					mode.combat_system = "simple"
 				elseif highest_key == 2 then
-					--gme:SetDamageFilter( Dynamic_Wrap (CStealingCreationGameMode, "DamageFilter_CombatTriangle" ), self )
+					--gme:SetDamageFilter( Dynamic_Wrap (DTGGameMode, "DamageFilter_CombatTriangle" ), self )
 					mode.combat_system = "triangle"
 				end
 			end
 
 			print(category .. ": " .. highest_key)
-
-			PlayerResource:SetCustomTeamAssignment( 0, DOTA_TEAM_CUSTOM_1 )
 		end
 	end
 end
 
-function CStealingCreationGameMode:OnSettingVote(keys)
+function DTGGameMode:OnSettingVote(keys)
 	--print("Custom Game Settings Vote.")
 	--PrintTable(keys)
 
 	local pid 	= keys.PlayerID
-	local mode 	= GameRules.stealing_creation
+	local mode 	= GameRules.DTGGameMode
 
+	-- VoteTable is initialised in InitGameMode()
 	if not mode.VoteTable[keys.category] then mode.VoteTable[keys.category] = {} end
 	mode.VoteTable[keys.category][pid] = keys.vote
 
@@ -183,9 +183,9 @@ end
 abilityUpgradeCostTable 	= {25, 30, 35, 40}
 weaponPurchaseCostTable 	= {20, 25, 30, 35, 40}
 armourPurchaseCostTable 	= {30, 35, 40 ,45, 50}
-barrierPurchaseCostTable 	= {50, 50, 50, 50, 50}
+barrierPurchaseCostTable 	= {50, 60, 70, 80, 90}
 
-function CStealingCreationGameMode:OnUpgradeAbilityRequest(keys)
+function DTGGameMode:OnUpgradeAbilityRequest(keys)
 	local pid 			= keys.PlayerID
 	local player 		= PlayerResource:GetPlayer(pid)
 	local hero 			= player:GetAssignedHero()
@@ -259,7 +259,7 @@ PointsTable = {
 	item_sc_robes_tier_5 = 250,
 }
 
-function CStealingCreationGameMode:OnDepositItems(keys)
+function DTGGameMode:OnDepositItems(keys)
 	local pid 			= keys.PlayerID
 	local player 		= PlayerResource:GetPlayer(pid)
 	local hero 			= player:GetAssignedHero()
@@ -279,14 +279,14 @@ function CStealingCreationGameMode:OnDepositItems(keys)
 
 	--print ("adding " .. points .. " points")
 
-	local mode = GameRules.stealing_creation
+	local mode = GameRules.DTGGameMode
 	mode.ScoreTable[pid]["crafting"] 	= mode.ScoreTable[pid]["crafting"] + points
 	mode.ScoreTable[pid]["score"] 		= RecalculateScore(pid)
 	CustomNetTables:SetTableValue("score_table", "player_" .. pid, mode.ScoreTable[pid])
 
 end
 
-function CStealingCreationGameMode:OnPurchaseItemRequest(keys)
+function DTGGameMode:OnPurchaseItemRequest(keys)
 	local pid 			= keys.PlayerID
 	local player 		= PlayerResource:GetPlayer(pid)
 	local hero 			= player:GetAssignedHero()
@@ -327,19 +327,19 @@ function CStealingCreationGameMode:OnPurchaseItemRequest(keys)
 end
 
 -- Register all the listeners at the start
-function CStealingCreationGameMode:RegisterEventHandlers()
+function DTGGameMode:RegisterEventHandlers()
 	print("Registering Event Listeners.")
 
-	GameRules.stealing_creation.EndGameNow = false
+	GameRules.DTGGameMode.EndGameNow = false
 
-	Convars:RegisterCommand("sc_add_all_mats", Dynamic_Wrap(CStealingCreationGameMode, "AddAllMats"), "adds lots of all mats to all players", FCVAR_CHEAT)
-	Convars:RegisterCommand("sc_end_game", Dynamic_Wrap(CStealingCreationGameMode, "EndGame"), "ends the game", FCVAR_CHEAT)
+	Convars:RegisterCommand("sc_add_all_mats", Dynamic_Wrap(DTGGameMode, "AddAllMats"), "adds lots of all mats to all players", FCVAR_CHEAT)
+	Convars:RegisterCommand("sc_end_game", Dynamic_Wrap(DTGGameMode, "EndGame"), "ends the game", FCVAR_CHEAT)
 
-	ListenToGameEvent("dota_player_pick_hero", Dynamic_Wrap(CStealingCreationGameMode, "OnPlayerPickHero"), CStealingCreationGameMode)
-	ListenToGameEvent("game_rules_state_change", Dynamic_Wrap(CStealingCreationGameMode, "OnGameRulesStateChange"), CStealingCreationGameMode)
+	ListenToGameEvent("dota_player_pick_hero", Dynamic_Wrap(DTGGameMode, "OnPlayerPickHero"), DTGGameMode)
+	ListenToGameEvent("game_rules_state_change", Dynamic_Wrap(DTGGameMode, "OnGameRulesStateChange"), DTGGameMode)
 
-	CustomGameEventManager:RegisterListener( "setting_vote", 	Dynamic_Wrap(CStealingCreationGameMode, "OnSettingVote"))
-	CustomGameEventManager:RegisterListener( "upgrade_ability", Dynamic_Wrap(CStealingCreationGameMode, "OnUpgradeAbilityRequest"))
-	CustomGameEventManager:RegisterListener( "deposit_items", 	Dynamic_Wrap(CStealingCreationGameMode, "OnDepositItems"))
-	CustomGameEventManager:RegisterListener( "purchase_item", 	Dynamic_Wrap(CStealingCreationGameMode, "OnPurchaseItemRequest"))
+	CustomGameEventManager:RegisterListener( "setting_vote", 	Dynamic_Wrap(DTGGameMode, "OnSettingVote"))
+	CustomGameEventManager:RegisterListener( "upgrade_ability", Dynamic_Wrap(DTGGameMode, "OnUpgradeAbilityRequest"))
+	CustomGameEventManager:RegisterListener( "deposit_items", 	Dynamic_Wrap(DTGGameMode, "OnDepositItems"))
+	CustomGameEventManager:RegisterListener( "purchase_item", 	Dynamic_Wrap(DTGGameMode, "OnPurchaseItemRequest"))
 end

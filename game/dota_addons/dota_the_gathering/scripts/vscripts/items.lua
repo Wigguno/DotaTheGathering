@@ -162,6 +162,19 @@ plotOffsets = {
 	blocker30 = Vector(-512, 128, 0),
 	blocker31 = Vector(-512, 256, 0),
 	blocker32 = Vector(-512, 384, 0),
+
+	door1_out = Vector(0, 640, 0),
+	door1_in  = Vector(0, 384, 0),
+
+	door2_out = Vector(640, 0, 0),
+	door2_in  = Vector(384, 0, 0),
+
+	door3_out = Vector(0, -640, 0),
+	door3_in  = Vector(0, -384, 0),
+
+	door4_out = Vector(-640, 0, 0),
+	door4_in  = Vector(-384, 0, 0),
+
 }
 
 function OnBarrierPlace(keys)
@@ -170,7 +183,7 @@ function OnBarrierPlace(keys)
 
 	local targetPoint 	= keys.target_points[1]
 	local team 			= keys.caster:GetTeam()
-	team = DOTA_TEAM_BADGUYS
+	local tier 			= tonumber(keys.Tier)
 
 	if #plotList == 0 then
 		--print("Empty Plot List!")
@@ -198,8 +211,8 @@ function OnBarrierPlace(keys)
 		end
 	end
 
-	print("Distance to closest point: " .. closest_dist)
-	print(closest_point)
+	--print("Distance to closest point: " .. closest_dist)
+	--print(closest_point)
 
 	local centerPoint = closest_point
 	local barrierEntities = {}
@@ -217,30 +230,38 @@ function OnBarrierPlace(keys)
 		else
 			fence_instance.parent = parent_index
 		end
+		fence_instance:SetBaseMaxHealth(1000 * tier)
+		fence_instance:SetMaxHealth(1000 * tier)
+		fence_instance:Heal(5000, fence_instance)
 		table.insert(barrierEntities.fences, fence_instance:entindex())
 	end
 
+	local vec_BL = centerPoint + Vector(-512, -512, 0)
+	local vec_TR = centerPoint + Vector(512, 512, 0)
+
 	for i = 1,4 do
 		--print("spawning door: " .. i)
-		local door_instance = CreateUnitByName("barrier_sc_door", centerPoint + plotOffsets["door"..i], false, nil, nil, team)
-		door_instance.parent = parent_index
+		local door_instance 	= CreateUnitByName("barrier_sc_door", centerPoint + plotOffsets["door"..i], false, nil, nil, team)
+		door_instance.parent 	= parent_index
+
+		door_instance.target_type 	= "plot_barrier"
+		door_instance.inside 		= centerPoint + plotOffsets["door" .. i .. "_in"]
+		door_instance.outside 		= centerPoint + plotOffsets["door" .. i .. "_out"]
+		door_instance.BL 			= vec_BL
+		door_instance.TR 			= vec_TR
+
 		table.insert(barrierEntities.doors, door_instance:entindex())
 	end
 
 	for i = 1,32 do
 		--print("spawning blocker: " .. i)
-		local blocker_instance = SpawnEntityFromTableSynchronous("point_simple_obstruction", {origin=centerPoint + plotOffsets['blocker'..i]})
+		local blocker_instance = SpawnEntityFromTableSynchronous("point_simple_obstruction", {origin=centerPoint + plotOffsets['blocker'..i], block_fow=0})
 		blocker_instance.parent = parent_index
 		table.insert(barrierEntities.blockers, blocker_instance:entindex())
 	end
 
 	-- Add the entities to the fences
 	EntIndexToHScript(barrierEntities.fences[1]).children = barrierEntities
-
-	for i = 1,8 do
-		local fence_instance = EntIndexToHScript(barrierEntities.fences[i])
-		fence_instance.barrier_group = barrierEntities
-	end
 
 	Timers:CreateTimer({
 		callback = function()		
@@ -264,15 +285,109 @@ function OnBarrierPlace(keys)
 		end
 	})	
 
+	-- Find units within the area
+	local nearbyUnits = FindUnitsInRadius(
+		DOTA_TEAM_NEUTRALS, -- Set the search team to the neutrals team
+		centerPoint, -- The search origin
+		nil, -- leave as nil
+		800, -- search radius is just over 512 * srqt(2) (diagonal distance to corners, plus some extra)
+		DOTA_UNIT_TARGET_TEAM_ENEMY, -- team flags. both radiant and dire are enemies of the neutrals
+		DOTA_UNIT_TARGET_HERO, -- Unit flags. I assume you're looking for only heroes
+		DOTA_UNIT_TARGET_FLAG_NONE, -- dunno what this is
+		FIND_ANY_ORDER, -- nor this
+		false)-- leave false
+
+	for _, unit in pairs(nearbyUnits) do
+		local unit_loc = unit:GetAbsOrigin()
+		-- Check if the unit is within the box we are building a barrier around
+		if unit_loc.x > vec_BL.x and
+		unit_loc.x < vec_TR.x and
+		unit_loc.y > vec_BL.y and 
+		unit_loc.y < vec_TR.y then			
+			if unit:GetTeam() == team then
+				local abil = unit:FindAbilityByName("ability_sc_hero_helper")	
+				unit.protected_by = barrierEntities.doors[1]			
+				abil:ApplyDataDrivenModifier(unit, unit, "modifier_protected", nil)
+			else
+				FindClearSpaceForUnit(unit, centerPoint + plotOffsets["door3_out"], true)
+			end
+		end
+	end
+
+
 end
 
 function OnHealthLinkDamaged(keys)
-	print("Health linked unit damaged!")
+	--print("Health linked unit damaged!")
 	--PrintTable(keys)
+
+	local unit = keys.unit
+	local unitIndex = unit:entindex()
+	local linkedList = nil
+
+	if unit.parent then
+		local parent = EntIndexToHScript(unit.parent)
+		linkedList = parent.children
+	else
+		linkedList = unit.children
+	end
+
+	if linkedList == nil then
+		print("FAIL")
+		return
+	end
+
+
+	for k, linkedIndex in pairs(linkedList.fences) do
+		if linkedIndex ~= unitIndex then
+			EntIndexToHScript(linkedIndex):SetHealth(unit:GetHealth())
+		end
+	end
 end
 
 function OnHealthLinkDeath(keys)
-	print("Health linked unit died!")
+	--print("Health linked unit died!")
 	--PrintTable(keys)
+
+	local unit = keys.unit
+	local unitIndex = unit:entindex()
+	local linkedList = nil
+
+	if unit.parent then
+		local parent = EntIndexToHScript(unit.parent)
+		linkedList = parent.children
+	else
+		linkedList = unit.children
+	end
+
+	if linkedList == nil then
+		print("FAIL")
+		return
+	end
+
+
+	for k, linkedIndex in pairs(linkedList.fences) do
+		EntIndexToHScript(linkedIndex):RemoveSelf()
+	end
+	for k, linkedIndex in pairs(linkedList.blockers) do
+		EntIndexToHScript(linkedIndex):RemoveSelf()
+	end
+	for k, linkedIndex in pairs(linkedList.doors) do
+		EntIndexToHScript(linkedIndex):RemoveSelf()
+	end
 	
+end
+
+function CheckProtectedStatus(keys)
+	--PrintTable(keys)
+
+	local hero 		= EntIndexToHScript(keys.caster_entindex)
+	if not hero.protected_by then
+		hero:RemoveModifierByName("modifier_protected")
+		return
+	end
+	local protector = EntIndexToHScript(hero.protected_by)
+	if not protector or protector:IsNull() then
+		hero:RemoveModifierByName("modifier_protected")
+	end
 end

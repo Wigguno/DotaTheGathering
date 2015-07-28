@@ -89,6 +89,18 @@
 				<Button class="ItemBuyButton" id="ItemBuyButtonBarrier1" onactivate="OnBuyButtonPressed(7, 1)" onmouseover="DOTAShowTextTooltip(#CostTier1Barrier)" onmouseout="DOTAHideTextTooltip()" >
 					<DOTAItemImage itemname="item_sc_barrier_tier_1" hittest="false" />
 				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonBarrier2" onactivate="OnBuyButtonPressed(7, 2)" onmouseover="DOTAShowTextTooltip(#CostTier2Barrier)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_barrier_tier_2" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonBarrier3" onactivate="OnBuyButtonPressed(7, 3)" onmouseover="DOTAShowTextTooltip(#CostTier3Barrier)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_barrier_tier_3" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonBarrier4" onactivate="OnBuyButtonPressed(7, 4)" onmouseover="DOTAShowTextTooltip(#CostTier4Barrier)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_barrier_tier_4" hittest="false" />
+				</Button>
+				<Button class="ItemBuyButton" id="ItemBuyButtonBarrier5" onactivate="OnBuyButtonPressed(7, 5)" onmouseover="DOTAShowTextTooltip(#CostTier5Barrier)" onmouseout="DOTAHideTextTooltip()" >
+					<DOTAItemImage itemname="item_sc_barrier_tier_5" hittest="false" />
+				</Button>
 
 			</Panel>
 		</Panel>

@@ -4,7 +4,7 @@
 
 -- Lua Filters
 
-function CStealingCreationGameMode:ExecuteOrderFilter(filterTable)
+function DTGGameMode:ExecuteOrderFilter(filterTable)
 	--print("-------------------------------------------------")
 	--PrintTable(filterTable)
 	--print("queue: " .. filterTable['queue'])
@@ -19,6 +19,7 @@ function CStealingCreationGameMode:ExecuteOrderFilter(filterTable)
 		local target_type 	= ent_target.target_type
 
 		if target_type == "spawn_barrier" and (order_hero:GetAbsOrigin() - ent_target:GetAbsOrigin()):Length2D() >= 192 
+		or target_type == "plot_barrier" and (order_hero:GetAbsOrigin() - ent_target:GetAbsOrigin()):Length2D() >= 192 
 		or target_type == "gather_node" and (order_hero:GetAbsOrigin() - ent_target:GetAbsOrigin()):Length2D() >= 192 
 		or target_type == "handin_chest" and (order_hero:GetAbsOrigin() - ent_target:GetAbsOrigin()):Length2D() >= 192 
 		or target_type == "crafter" and (order_hero:GetAbsOrigin() - ent_target:GetAbsOrigin()):Length2D() >= 320 
@@ -118,6 +119,45 @@ function CStealingCreationGameMode:ExecuteOrderFilter(filterTable)
 		elseif ent_target.target_type == "handin_chest" then
 			--print("close crafter clicked")
 			CustomGameEventManager:Send_ServerToPlayer(order_player, "show_handin_hud", {target_index = ent_target:entindex()} )
+		elseif ent_target.target_type == "plot_barrier" then
+			--print("close plot barrier clicked")
+
+			local loc_bl 	= ent_target.BL
+			local loc_tr 	= ent_target.TR
+			local tp_from 	= order_hero:GetAbsOrigin()
+			local tp_to 	= nil
+		
+
+			if order_hero:GetTeam() ~= ent_target:GetTeam() then
+				return true
+			end
+			--[[
+			DebugDrawLine(loc_bl, Vector(loc_bl.x, loc_tr.y, 128), 255, 255, 255, false, 5)
+			DebugDrawLine(Vector(loc_bl.x, loc_tr.y, 128), loc_tr, 255, 255, 255, false, 5)
+			DebugDrawLine(loc_tr ,Vector(loc_tr.x, loc_bl.y, 128), 255, 255, 255, false, 5)
+			DebugDrawLine(Vector(loc_tr.x, loc_bl.y, 128), loc_bl, 255, 255, 255, false, 5)
+			]]
+
+			-- determine if the units X and Y positions are within the bounds of the blocked-off plot
+			-- and set the TP target accordingly
+			if tp_from.x > loc_bl.x and
+			tp_from.x < loc_tr.x and
+			tp_from.y > loc_bl.y and 
+			tp_from.y < loc_tr.y then
+				tp_to = ent_target.outside
+				order_hero:RemoveModifierByName("modifier_protected")
+			else
+				tp_to = ent_target.inside
+
+				local abil = order_hero:FindAbilityByName("ability_sc_hero_helper")	
+				order_hero.protected_by = ent_target:entindex()				
+				abil:ApplyDataDrivenModifier(order_hero, order_hero, "modifier_protected", nil)
+			end
+
+			-- teleport the unit
+			FindClearSpaceForUnit(order_hero, tp_to, true)
+			return false
+
 		end
 	else
 		--print("We don't care about this order.")
@@ -126,7 +166,7 @@ function CStealingCreationGameMode:ExecuteOrderFilter(filterTable)
 	return true
 end
 
-function CStealingCreationGameMode:DamageFilter_CombatTriangle(filterTable)
+function DTGGameMode:DamageFilter_CombatTriangle(filterTable)
 	--PrintTable(filterTable)
 
 	local attackHero 			= EntIndexToHScript(filterTable['entindex_attacker_const'])
@@ -201,7 +241,7 @@ function CStealingCreationGameMode:DamageFilter_CombatTriangle(filterTable)
 	return false
 end
 
-function CStealingCreationGameMode:DamageFilter_Simple(filterTable)
+function DTGGameMode:DamageFilter_Simple(filterTable)
 	--PrintTable(filterTable)
 
 	local attackHero 			= EntIndexToHScript(filterTable['entindex_attacker_const'])

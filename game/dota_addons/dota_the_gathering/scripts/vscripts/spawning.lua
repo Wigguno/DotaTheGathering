@@ -5,7 +5,7 @@
 -- Lua Spawning
 --   Handles spawning all kinds of units and setting their variables correctly
 
-function CStealingCreationGameMode:SpawnDoor(x, y, r, team, inside, outside, trigger)
+function DTGGameMode:SpawnDoor(x, y, r, team, inside, outside, trigger)
 	local otherteam = nil
 	if team == DOTA_TEAM_GOODGUYS then otherteam = DOTA_TEAM_BADGUYS end
 	if team == DOTA_TEAM_BADGUYS then otherteam = DOTA_TEAM_GOODGUYS end
@@ -35,7 +35,7 @@ function CStealingCreationGameMode:SpawnDoor(x, y, r, team, inside, outside, tri
 
 end
 
-function CStealingCreationGameMode:SpawnBaseEntities()
+function DTGGameMode:SpawnBaseEntities()
 
 	-- find the entities
 	local radiant_spawn_trigger 		= Entities:FindByName(nil, "radiant_spawn_area_trigger")
@@ -73,7 +73,7 @@ function CStealingCreationGameMode:SpawnBaseEntities()
 	})	
 end
 
-function CStealingCreationGameMode:SpawnRags(x, y)
+function DTGGameMode:SpawnRags(x, y)
 
 	local z = GetGroundHeight(Vector(x, y, 128), nil)
 
@@ -122,7 +122,7 @@ function CStealingCreationGameMode:SpawnRags(x, y)
 	end
 end
 
-function CStealingCreationGameMode:SpawnTrees(x, y, tier)
+function DTGGameMode:SpawnTrees(x, y, tier)
 
 	local z = GetGroundHeight(Vector(x, y, 128), nil)
 	for n = 1,5 do
@@ -146,7 +146,7 @@ function CStealingCreationGameMode:SpawnTrees(x, y, tier)
 	end
 end
 
-function CStealingCreationGameMode:SpawnFish(x, y, tier)
+function DTGGameMode:SpawnFish(x, y, tier)
 
 	local z = GetGroundHeight(Vector(x, y, 128), nil)
 	for n = 1,5 do
@@ -170,7 +170,7 @@ function CStealingCreationGameMode:SpawnFish(x, y, tier)
 	end
 end
 
-function CStealingCreationGameMode:SpawnRocks(x, y, tier)
+function DTGGameMode:SpawnRocks(x, y, tier)
 
 	local z = GetGroundHeight(Vector(x, y, 128), nil)
 	for n = 1,5 do
@@ -194,7 +194,7 @@ function CStealingCreationGameMode:SpawnRocks(x, y, tier)
 	end
 end
 
-function CStealingCreationGameMode:SpawnBirds(x, y, tier)
+function DTGGameMode:SpawnBirds(x, y, tier)
 
 	local z = GetGroundHeight(Vector(x, y, 128), nil)
 	for n = 1,5 do
@@ -218,7 +218,7 @@ function CStealingCreationGameMode:SpawnBirds(x, y, tier)
 	end
 end
 
-function CStealingCreationGameMode:SpawnCrafter(x, y)
+function DTGGameMode:SpawnCrafter(x, y)
 
 	local z = GetGroundHeight(Vector(x, y, 128), nil)
 
@@ -237,7 +237,7 @@ function GetRandomFromPlotTable(PlotTable)
 	return table_keys[math.random(#table_keys)]
 end
 
-function CStealingCreationGameMode:SetupArena()
+function DTGGameMode:SetupArena()
 	local kv_file = "scripts/maps/" .. GetMapName() .. ".txt"
 	local kv = LoadKeyValues( kv_file )
 	self.SpawnTable = kv or {}
@@ -410,7 +410,7 @@ function CStealingCreationGameMode:SetupArena()
 
 end
 
-function CStealingCreationGameMode:SpawnTestSetup()
+function DTGGameMode:SpawnTestSetup()
 
 	--self:SpawnTrees(-6656, -4608, 2)
 	--self:SpawnFish(-6656, -4608, 2)

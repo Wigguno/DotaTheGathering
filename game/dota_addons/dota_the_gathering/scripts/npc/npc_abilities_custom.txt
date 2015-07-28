@@ -229,6 +229,32 @@
 					}
 				}
 			}
+
+			"modifier_protected"
+			{
+				"Passive" 				"0" 
+				"Hidden" 				"0" 
+				"TextureName"			"medusa_mana_shield"
+				"ThinkInterval"  		"1.0"
+
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"	
+					"MODIFIER_STATE_UNSELECTABLE"		"MODIFIER_STATE_VALUE_ENABLED"	
+				}	
+
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items.lua"
+						"Function"		"CheckProtectedStatus"
+						"Target"		"CASTER"
+					}
+				}
+
+
+			}
 		}
 	}
 
@@ -267,7 +293,7 @@
 			"modifier_sc_prop"
 			{
 				"Passive"				"1"
-				"Hidden"				"1"				
+				"IsHidden"				"1"				
 
 				"States"
 				{
@@ -284,7 +310,7 @@
 			"modifier_node_level_2"
 			{
 				"Passive"	"0"
-				"Hidden"	"1"
+				"IsHidden"	"1"
 				
 				"StatusEffectName" 		"particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_frosty_radiant.vpcf"
 				"StatusEffectPriority" 	"10"
@@ -293,7 +319,7 @@
 			"modifier_node_level_3"
 			{
 				"Passive"	"0"
-				"Hidden"	"1"
+				"IsHidden"	"1"
 				
 				"StatusEffectName" 		"particles/econ/items/effigies/status_fx_effigies/status_effect_statue_compendium_2014_radiant.vpcf"
 				"StatusEffectPriority" 	"10"
@@ -302,7 +328,7 @@
 			"modifier_node_level_4"
 			{
 				"Passive"	"0"
-				"Hidden"	"1"
+				"IsHidden"	"1"
 				
 				"StatusEffectName" 		"particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_gold_lvl2.vpcf"
 				"StatusEffectPriority" 	"10"
@@ -311,7 +337,7 @@
 			"modifier_node_level_5"
 			{
 				"Passive"	"0"
-				"Hidden"	"1"
+				"IsHidden"	"1"
 				
 				"StatusEffectName" 		"particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_jade_stone_dire.vpcf"
 				"StatusEffectPriority" 	"10"
@@ -331,7 +357,7 @@
 			"modifier_sc_link_health"
 			{
 				"Passive"				"1"
-				"Hidden"				"1"				
+				"IsHidden"				"1"				
 				"OnTakeDamage"
 				{
 					"RunScript"

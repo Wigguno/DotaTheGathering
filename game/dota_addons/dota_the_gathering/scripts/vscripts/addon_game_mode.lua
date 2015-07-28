@@ -5,8 +5,8 @@
 -- Ty Based Crazyloon for the name "Dota the Gathering"
 
 -- put the class into the global namespace so our external lua files work
-if CStealingCreationGameMode == nil then
-	_G.CStealingCreationGameMode = class({})
+if DTGGameMode == nil then
+	_G.DTGGameMode = class({})
 end
 
 require ( "libraries/PseudoRNG" )
@@ -20,12 +20,14 @@ require ( "spawning" )
 
 function Precache( context )
 	-- load the game mode here to precache units used by spawners, etc.
-    GameRules.stealing_creation = CStealingCreationGameMode()
+    GameRules.DTGGameMode = DTGGameMode()
 
     -- precache some models
 	PrecacheUnitByNameSync("prop_sc_barrier", context)
 	PrecacheUnitByNameSync("prop_sc_crafter", context)
 	PrecacheUnitByNameSync("prop_sc_chest", context)
+	PrecacheUnitByNameSync("barrier_sc_fence", context)
+	PrecacheUnitByNameSync("barrier_sc_door", context)
 
 	PrecacheUnitByNameSync("prop_sc_rags_small_bush_clickable", context)
 	PrecacheUnitByNameSync("prop_sc_rags_large_bush_clickable", context)
@@ -91,10 +93,10 @@ function Precache( context )
 end
 
 function Activate()
-	GameRules.stealing_creation:InitGameMode()
+	GameRules.DTGGameMode:InitGameMode()
 end
 
-function CStealingCreationGameMode:InitGameMode()
+function DTGGameMode:InitGameMode()
 	print( "Loading Dota the Gathering..." )
 
 	math.randomseed(Time())
@@ -128,15 +130,15 @@ function CStealingCreationGameMode:InitGameMode()
 	mode:SetUseCustomHeroLevels( true )	
 
 	-- set up the order filter
-	mode:SetExecuteOrderFilter( Dynamic_Wrap (CStealingCreationGameMode, "ExecuteOrderFilter" ), self )
-	mode:SetDamageFilter( Dynamic_Wrap (CStealingCreationGameMode, "DamageFilter_Simple" ), self )
+	mode:SetExecuteOrderFilter( Dynamic_Wrap (DTGGameMode, "ExecuteOrderFilter" ), self )
+	mode:SetDamageFilter( Dynamic_Wrap (DTGGameMode, "DamageFilter_Simple" ), self )
 	mode:SetThink( "OnThink", self, "GlobalThink", 1 )
 
 	print("Load complete.")
 end
 
 
-function CStealingCreationGameMode:OnThink()
+function DTGGameMode:OnThink()
 
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME and not self.EndGameNow == true and self.EndGameCountdown > 0 then
 

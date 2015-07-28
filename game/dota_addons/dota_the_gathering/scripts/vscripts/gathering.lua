@@ -18,7 +18,7 @@ function killNode(node)
 	node:RemoveModifierByName("modifier_sc_prop")
 	node:ForceKill(false)
 
-	local mode = GameRules.stealing_creation
+	local mode = GameRules.DTGGameMode
 	mode.NodeCount = mode.NodeCount - 1
 end
 
@@ -65,7 +65,7 @@ function OnGather(keys, tier)
 	end
 
 	if tier == 1 or gatherHero.gather_chance:Next() then
-		local mode = GameRules.stealing_creation
+		local mode = GameRules.DTGGameMode
 		mode.ScoreTable[pid]["type" .. tier] = mode.ScoreTable[pid]["type" .. tier] + 1
 		mode.ScoreTable[pid]["score"] = RecalculateScore(pid)
 		--print("[" .. pid .. "] newscore: " .. mode.ScoreTable[pid]["score"])
