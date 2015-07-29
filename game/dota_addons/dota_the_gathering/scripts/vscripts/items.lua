@@ -177,13 +177,7 @@ plotOffsets = {
 
 }
 
-function OnBarrierPlace(keys)
-	--print("On Barrier Place!!")
-	--PrintTable(keys)
-
-	local targetPoint 	= keys.target_points[1]
-	local team 			= keys.caster:GetTeam()
-	local tier 			= tonumber(keys.Tier)
+function GetClosestPlotCenter(point)
 
 	if #plotList == 0 then
 		--print("Empty Plot List!")
@@ -204,17 +198,63 @@ function OnBarrierPlace(keys)
 
 	for _, vec in pairs(plotList) do
 		--print(vec)
-		local dist = (vec - targetPoint):Length2D()
+		local dist = (vec - point):Length2D()
 		if dist < closest_dist then
 			closest_point = vec
 			closest_dist = dist
 		end
 	end
+	return closest_point
+end
+
+function CheckPlotVacancy(keys)
+	--print("On Barrier Place!!")
+	--PrintTable(keys)
+
+	local caster 		= keys.caster
+	local centerPoint 	= GetClosestPlotCenter(keys.target_points[1])
+	local team 			= caster:GetTeam()
+	local plot_empty 	= true
+	local player 		= PlayerResource:GetPlayer(caster:GetPlayerID())
+
+	-- Find fences nearby
+	local nearbyUnits = Entities:FindAllInSphere(centerPoint, 750)
+	for k, v in pairs(nearbyUnits) do
+		if v.GetUnitName and v:GetUnitName() == "barrier_sc_fence" then
+			--print("Barrier already on this plot")
+			plot_empty = false
+
+			local event_data =
+			{
+				text 		= "Barrier_PlotOccupied",
+				duration 	= 2,
+			}
+			CustomGameEventManager:Send_ServerToPlayer( player, "js_notification", event_data )
+
+			caster:Stop()
+			break;
+		end
+	end
+	return plot_empty
+end
+
+
+function OnBarrierPlace(keys)
+	--print("On Barrier Place!!")
+	--PrintTable(keys)
+
+	-- Re-test the plot vacancy
+	if not CheckPlotVacancy(keys) then
+		return
+	end
+
+	local centerPoint 	= GetClosestPlotCenter(keys.target_points[1])
+	local team 			= keys.caster:GetTeam()
+	local tier 			= tonumber(keys.Tier)
 
 	--print("Distance to closest point: " .. closest_dist)
 	--print(closest_point)
 
-	local centerPoint = closest_point
 	local barrierEntities = {}
 	barrierEntities.fences = {}
 	barrierEntities.doors = {}

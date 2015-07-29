@@ -17,3 +17,6 @@ These are loaded using the panorama layout file [gamesetup_options.xml](https://
 The vote event is handled in DTGGameMode:OnSettingVote(), in [events.lua](https://github.com/Wigguno/DotaTheGathering/blob/master/game/dota_addons/dota_the_gathering/scripts/vscripts/events.lua)  
 
 When the game state changes to Hero Select, the votes are tallied and acted upon in [events.lua](https://github.com/Wigguno/DotaTheGathering/blob/master/game/dota_addons/dota_the_gathering/scripts/vscripts/events.lua)  
+
+# Contact
+Feel free to contact me for help understanding this code. You can contact me on IRC (irc.gamesurge.net, #dota2mods, #dota2modhelpdesk)

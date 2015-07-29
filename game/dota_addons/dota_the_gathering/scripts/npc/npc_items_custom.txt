@@ -2389,6 +2389,16 @@
 			}
 		}
 
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"CheckPlotVacancy"
+				"Target"			"POINT"
+			}
+		}
+
 		"OnChannelSucceeded"
 		{
 			"RunScript"
@@ -2435,6 +2445,17 @@
 			}
 		}
 
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"CheckPlotVacancy"
+				"Target"			"POINT"
+			}
+		}
+
+
 		"OnChannelSucceeded"
 		{
 			"RunScript"
@@ -2479,6 +2500,17 @@
 				"health"			"3000"
 			}
 		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"CheckPlotVacancy"
+				"Target"			"POINT"
+			}
+		}
+
 
 		"OnChannelSucceeded"
 		{
@@ -2525,6 +2557,17 @@
 			}
 		}
 
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"CheckPlotVacancy"
+				"Target"			"POINT"
+			}
+		}
+
+
 		"OnChannelSucceeded"
 		{
 			"RunScript"
@@ -2570,6 +2613,17 @@
 				"health"			"5000"
 			}
 		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"CheckPlotVacancy"
+				"Target"			"POINT"
+			}
+		}
+
 
 		"OnChannelSucceeded"
 		{
