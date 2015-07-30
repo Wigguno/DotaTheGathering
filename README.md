@@ -8,6 +8,7 @@ If you're an artist, I need help to draw a good icon for the mod, as well as som
 
 If you're a mapper, I need help to make a good map. The current map is lacking in the aesthetics department. Play around in Hammer and see what you can come up with. Think about how the plots should be laid out too! For reference, here's the [original layout document](http://i.imgur.com/sSdTODX.png)
 
+All major contributors will be acknowledged and added as authors to the workshop page
 
 # Interesting code snippets
 ## Right Click - Use
