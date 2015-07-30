@@ -81,8 +81,11 @@ function OnGather(keys, tier)
 		gatherNode:SetHealth(gatherNode_Health - 1)
 
 		-- Give the person +1 mat
-		local pid = gatherHero:GetPlayerID()
 		GatherClay(tier, 1, pid, gatherHero)
+
+		-- play a sound
+		EmitSoundOnClient("ui.inv_pickup_gun", PlayerResource:GetPlayer(pid))
+
 	end
 end
 

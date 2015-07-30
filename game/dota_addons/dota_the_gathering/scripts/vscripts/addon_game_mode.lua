@@ -111,8 +111,8 @@ function DTGGameMode:InitGameMode()
 	self.NodeCount 			= 0
 	self.EndGameCountdown 	= 30
 
-	self:SetupArena()
-	--self:SpawnTestSetup()
+	--self:SetupArena()
+	self:SpawnTestSetup()
 
 	GameRules:SetGoldPerTick( 0 )
 	GameRules:SetPreGameTime( 60 * 20 )

@@ -3,6 +3,12 @@ Dota 2 Reborn custom game based on Stealing Creation from RuneScape
 
 Workshop page: http://steamcommunity.com/sharedfiles/filedetails/?id=488989532
 
+# Help Needed
+If you're an artist, I need help to draw a good icon for the mod, as well as some [item icons](https://github.com/Wigguno/DotaTheGathering/tree/master/content/dota_addons/dota_the_gathering/panorama/images/items) in the game.
+
+If you're a mapper, I need help to make a good map. The current map is lacking in the aesthetics department. Play around in Hammer and see what you can come up with. Think about how the plots should be laid out too! For reference, here's the [original layout document](http://i.imgur.com/sSdTODX.png)
+
+
 # Interesting code snippets
 ## Right Click - Use
 Right click use is accomplished by creating every interactive object as a creature with an invulnerable modifier. [spawning.lua](https://github.com/Wigguno/DotaTheGathering/blob/master/game/dota_addons/dota_the_gathering/scripts/vscripts/spawning.lua)  
@@ -19,4 +25,4 @@ The vote event is handled in DTGGameMode:OnSettingVote(), in [events.lua](https:
 When the game state changes to Hero Select, the votes are tallied and acted upon in [events.lua](https://github.com/Wigguno/DotaTheGathering/blob/master/game/dota_addons/dota_the_gathering/scripts/vscripts/events.lua)  
 
 # Contact
-Feel free to contact me for help understanding this code. You can contact me on IRC (irc.gamesurge.net, #dota2mods, #dota2modhelpdesk)
+Feel free to contact me for help understanding this code. 
